@@ -89,36 +89,36 @@ const location_data: DataType[] = [
       class: "col-xl-3"
    },
 
-   // home_3
+    // home_3
 
-   {
-      id: 1,
-      page: "home_3",
-      thumb: "/assets/img/location/location.jpg",
-      title: "Paris",
-      total: "05 ",
-   },
-   {
-      id: 2,
-      page: "home_3",
-      thumb: "/assets/img/location/location-2.jpg",
-      title: "Australia",
-      total: "08",
-   },
-   {
-      id: 3,
-      page: "home_3",
-      thumb: "/assets/img/location/location-3.jpg",
-      title: "New York",
-      total: "06",
-   },
-   {
-      id: 4,
-      page: "home_3",
-      thumb: "/assets/img/location/location-4.jpg",
-      title: "Spain City",
-      total: "07",
-   },
+    {
+       id: 1,
+       page: "home_3",
+       thumb: "/assets/img/partners/brownsberg-nature-park.jpg",
+       title: "Brownsberg Nature Park",
+       total: "05 ",
+    },
+    {
+       id: 2,
+       page: "home_3",
+       thumb: "/assets/img/partners/raleighvallen-voltzberg.jpg",
+       title: "Raleighvallen & Voltzberg",
+       total: "08",
+    },
+    {
+       id: 3,
+       page: "home_3",
+       thumb: "/assets/img/partners/galibi-sea-turtle.jpg",
+       title: "Galibi Sea Turtle Tour",
+       total: "06",
+    },
+    {
+       id: 4,
+       page: "home_3",
+       thumb: "/assets/img/partners/commewijne-river-cruise.jpg",
+       title: "Commewijne River Cruise",
+       total: "07",
+    },
 
    // home_5
 

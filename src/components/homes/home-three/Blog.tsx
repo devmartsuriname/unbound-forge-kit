@@ -12,17 +12,17 @@ interface DataType {
 const blog_data: DataType[] = [
    {
       id: 1,
-      thumb: "/assets/img/blog/blog-2.jpg",
-      tag: "Hiking",
-      title: "Wine Country Escapes: Vineyard Tours for Connoisseurs",
+      thumb: "/assets/img/blog/suriname-wildlife-photography.jpg",
+      tag: "Wildlife",
+      title: "Wildlife Photography in Surinamese Rainforest",
       date: "26th Sep, 2024",
       time: "5 mins Read"
    },
    {
       id: 2,
-      thumb: "/assets/img/blog/blog-3.jpg",
-      tag: "Adventure",
-      title: "Thrills & Chills: Extreme Sports Tours for Adrenaline",
+      thumb: "/assets/img/blog/traditional-villages-suriname.jpg",
+      tag: "Culture",
+      title: "Traditional Villages Along the Suriname River",
       date: "26th Sep, 2024",
       time: "5 mins Read"
    },
@@ -36,28 +36,27 @@ const Blog = () => {
          <div className="container">
             <div className="row">
                <div className="col-lg-12">
-                  <div className="tg-location-section-title text-center mb-30">
-                     <h5 className="tg-section-subtitle mb-15 wow fadeInUp" data-wow-delay=".3s" data-wow-duration=".9s">Blog And Article</h5>
-                     <h2 className="mb-15 text-capitalize wow fadeInUp" data-wow-delay=".4s" data-wow-duration=".9s">Latest News & Articles</h2>
-                     <p className="text-capitalize wow fadeInUp" data-wow-delay=".5s" data-wow-duration=".9s">Are you tired of the typical tourist destinations and<br /> looking
-                        to step out of your comfort zonetravel</p>
-                  </div>
+                   <div className="tg-location-section-title text-center mb-30">
+                      <h5 className="tg-section-subtitle mb-15 wow fadeInUp" data-wow-delay=".3s" data-wow-duration=".9s">Discover Suriname</h5>
+                      <h2 className="mb-15 text-capitalize wow fadeInUp" data-wow-delay=".4s" data-wow-duration=".9s">Cultural Highlights & Wildlife Stories</h2>
+                      <p className="text-capitalize wow fadeInUp" data-wow-delay=".5s" data-wow-duration=".9s">Learn about traditional communities, wildlife encounters<br /> and conservation efforts in Upper Suriname</p>
+                   </div>
                </div>
 
                <div className="col-lg-5 wow fadeInLeft" data-wow-delay=".4s" data-wow-duration=".9s">
                   <div className="tg-blog-item mb-25">
                      <div className="tg-blog-thumb fix">
-                        <Link to="/blog-details"><img className="w-100" src="/assets/img/blog/blog-1.jpg" alt="blog" /></Link>
+                        <Link to="/blog-details"><img className="w-100" src="/assets/img/blog/cultural-highlights-suriname.jpg" alt="blog" /></Link>
                      </div>
-                     <div className="tg-blog-content  p-relative">
-                        <span className="tg-blog-tag p-absolute">Travel River</span>
-                        <h3 className="tg-blog-title"><Link to="/blog-details">Spiritual Sojourn: Pilgrimagee Tours
-                           for Soul Seekers</Link></h3>
-                        <div className="tg-blog-date">
-                           <span className="mr-20"><i className="fa-light fa-calendar"></i> 26th Sep, 2024</span>
-                           <span><i className="fa-regular fa-clock"></i> 5 mins Read</span>
-                        </div>
-                     </div>
+                      <div className="tg-blog-content  p-relative">
+                         <span className="tg-blog-tag p-absolute">Cultural Heritage</span>
+                         <h3 className="tg-blog-title"><Link to="/blog-details">Cultural Highlights of Upper Suriname: 
+                            Traditions that Endure</Link></h3>
+                         <div className="tg-blog-date">
+                            <span className="mr-20"><i className="fa-light fa-calendar"></i> 26th Sep, 2024</span>
+                            <span><i className="fa-regular fa-clock"></i> 5 mins Read</span>
+                         </div>
+                      </div>
                   </div>
                </div>
 

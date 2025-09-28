@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import location_data from "../../../data/LocationData";
 
 const Location = () => {
@@ -8,12 +7,12 @@ const Location = () => {
          <div className="container">
             <div className="row">
                <div className="col-lg-12">
-                  <div className="tg-location-section-title text-center mb-30">
-                     <h5 className="tg-section-subtitle mb-15 wow fadeInUp" data-wow-delay=".4s" data-wow-duration=".9s">Next Adventure Destination</h5>
-                     <h2 className="mb-15 text-capitalize wow fadeInUp" data-wow-delay=".5s" data-wow-duration=".9s">Popular Travel Destinations <br />Available Worldwide</h2>
-                     <p className="text-capitalize wow fadeInUp" data-wow-delay=".6s" data-wow-duration=".9s">Are you tired of the typical tourist destinations and looking<br />
-                        to step out of your comfort zonetravel</p>
-                  </div>
+                   <div className="tg-location-section-title text-center mb-30">
+                      <h5 className="tg-section-subtitle mb-15 wow fadeInUp" data-wow-delay=".4s" data-wow-duration=".9s">Partner Destinations</h5>
+                      <h2 className="mb-15 text-capitalize wow fadeInUp" data-wow-delay=".5s" data-wow-duration=".9s">Discover Suriname <br />with Trusted Partners</h2>
+                      <p className="text-capitalize wow fadeInUp" data-wow-delay=".6s" data-wow-duration=".9s">Explore protected nature reserves and cultural sites<br />
+                         through our certified partner network</p>
+                   </div>
                </div>
                {location_data.filter((items) => items.page === "home_3").map((item) => (
                   <div key={item.id} className="col-lg-3 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".3s" data-wow-duration=".9s">
@@ -24,7 +23,7 @@ const Location = () => {
                            </div>
                            <div className="tg-location-content text-center">
                               <span className="tg-location-time">{item.total} Tours</span>
-                              <h3 className="tg-location-title mb-0"><Link to="/map-listing">{item.title}</Link></h3>
+                              <h3 className="tg-location-title mb-0"><a href="#" target="_blank" rel="noopener noreferrer">{item.title}</a></h3>
                            </div>
                            <div className="tg-location-border one"></div>
                            <div className="tg-location-border two"></div>

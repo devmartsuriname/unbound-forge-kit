@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 import Button from '../../common/Button';
 
 const banner_thumb: string[] = [
-   "/assets/img/hero/hero-1.jpg",
-   "/assets/img/hero/hero-2.jpg",
-   "/assets/img/hero/hero-3.jpg",
-   "/assets/img/hero/hero-4.jpg",
-   "/assets/img/hero/hero-5.jpg",
+   "/assets/img/hero/jungle-resort-hero-1.jpg",
+   "/assets/img/hero/jungle-resort-hero-2.jpg", 
+   "/assets/img/hero/jungle-resort-hero-3.jpg",
+   "/assets/img/hero/jungle-resort-hero-4.jpg",
+   "/assets/img/hero/jungle-resort-hero-5.jpg",
 ]
 
 const setting = {
