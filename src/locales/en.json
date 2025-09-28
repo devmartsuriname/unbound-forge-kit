@@ -29,6 +29,12 @@
         "title": "Authentic Jungle Adventures in Upper Suriname",
         "subtitle": "Discover pristine rainforest, traditional villages, and unforgettable wildlife encounters",
         "cta": "Explore Our Tours"
+      },
+      "cta_section": {
+        "subtitle": "Next Adventure in Suriname",
+        "title": "Authentic Travel Destinations in Suriname",
+        "button": "Discover Suriname Tours",
+        "overlay_text": "Explore Suriname"
       }
     },
     "tours": {
