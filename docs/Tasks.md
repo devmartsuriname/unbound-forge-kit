@@ -134,84 +134,152 @@
 
 ---
 
-## Phase 2: Backend Foundation
-**Status**: ⬜ Requires Supabase Connection
+## Phase 2: Backend Foundation Setup
+**Status**: ⬜ Requires Design Guide Completion
+**Priority**: Critical Infrastructure
 
-### Supabase Setup
-- [ ] Connect Lovable to Supabase
-- [ ] Create database schema
-- [ ] Setup Row Level Security
-- [ ] Configure authentication
-- [ ] Setup storage buckets
+### Admin Layout & Theme System
+- [ ] Create AdminLayout component with Shadcn Sidebar navigation
+- [ ] Implement Light/Dark/System theme switching using Tourex CSS variables
+- [ ] Setup responsive admin interface following mobile-first design
+- [ ] Create protected admin routes with authentication guards
+- [ ] Integrate theme persistence and user preference storage
 
-### Database Tables
-- [ ] tours table with NL/EN fields
-- [ ] tour_departures with availability
-- [ ] bookings table
-- [ ] payments table
-- [ ] products table (shop)
-- [ ] orders table
-- [ ] media table
-- [ ] settings table
+### Supabase Infrastructure
+- [ ] Connect Lovable to Supabase project
+- [ ] Create core database schema with RLS policies
+- [ ] Setup Supabase authentication with admin roles
+- [ ] Configure storage buckets for media and documents
+- [ ] Create contact_submissions table for Phase 1B integration
 
-### Edge Functions
-- [ ] Payment webhook handler
-- [ ] Booking confirmation emails
-- [ ] Availability checker
-- [ ] Order processing
-
----
-
-## Phase 3: Booking System
-**Status**: ⬜ Depends on Phase 2
-
-### Tour Catalog
-- [ ] Dynamic tour loading from Supabase
-- [ ] Filter functionality
-- [ ] Search capabilities
-- [ ] Pagination
-- [ ] Tour detail dynamic content
-
-### Availability Engine
-- [ ] 72-hour cutoff logic
-- [ ] Capacity management
-- [ ] Real-time availability
-- [ ] Departure calendar component
-
-### Booking Flow
-- [ ] Date selection UI
-- [ ] Passenger details form
-- [ ] Payment method selection
-- [ ] Confirmation page
-- [ ] Email confirmations
+### Base Admin Components
+- [ ] Create admin header with theme toggle and user menu
+- [ ] Build sidebar navigation with module groupings
+- [ ] Implement responsive layout with collapsible sidebar
+- [ ] Create admin dashboard skeleton with metrics cards
+- [ ] Setup admin routing structure with breadcrumb navigation
 
 ---
 
-## Phase 4: Payments Integration
-**Status**: ⬜ Depends on Phase 3
+## Phase 3: Core Backend Modules
+**Status**: ⬜ Depends on Phase 2 Foundation
+**Priority**: Essential Business Logic
 
-### Payment Providers
-- [ ] Stripe integration
-- [ ] PayPal integration
-- [ ] Bank transfer instructions
-- [ ] Local payment options
+### Dashboard Module
+- [ ] Real-time booking statistics with performance metrics
+- [ ] Recent bookings overview with status indicators
+- [ ] Revenue tracking and payment summaries dashboard
+- [ ] Quick access to pending tasks and notification center
+- [ ] Key performance indicators with trend analysis
 
-### Payment Processing
-- [ ] Webhook handling
-- [ ] Payment status updates
-- [ ] Refund processing
-- [ ] Payment failure handling
+### Tours Management Module
+- [ ] CRUD operations for tours with bilingual content (EN/NL)
+- [ ] Tour itinerary management with day-by-day scheduling interface
+- [ ] Pricing configuration with seasonal adjustments and group discounts
+- [ ] Tour media gallery management with featured image selection
+- [ ] Tour availability calendar with capacity management
+
+### Bookings Management Module
+- [ ] Complete booking lifecycle management from inquiry to completion
+- [ ] Passenger information management with contact details and preferences
+- [ ] Booking status tracking (pending, confirmed, paid, completed, cancelled)
+- [ ] Departure capacity management with real-time availability updates
+- [ ] Booking search and filtering with advanced query options
+
+### Payments & Finance Module
+- [ ] Payment processing integration with Stripe/PayPal/Bank transfers
+- [ ] Financial reporting with booking revenue analysis and profit margins
+- [ ] Refund processing and payment dispute management workflow
+- [ ] Automated payment confirmation and receipt generation system
+- [ ] Payment analytics with conversion tracking and failure analysis
 
 ---
 
-## Phase 5: Shop System
-**Status**: ⬜ Optional for v1
+## Phase 4: Content Management Modules
+**Status**: ⬜ Depends on Phase 3 Core Modules
+**Priority**: Content & Customer Experience
 
-### Product Catalog
-- [ ] Product display
-- [ ] Inventory management
-- [ ] Cart functionality
-- [ ] Checkout process
+### FAQ Management Module
+- [ ] Four-category FAQ system (Booking & Payment, Tour Preparation, During Tour, Health & Safety)
+- [ ] Bilingual FAQ content management with rich text editing capabilities
+- [ ] FAQ ordering and categorization with drag-and-drop interface
+- [ ] Public FAQ display with search and filtering capabilities
+- [ ] FAQ analytics with most viewed questions and search terms
+
+### Team Management Module
+- [ ] Staff profile management with certifications and specialties tracking
+- [ ] Guide availability tracking and tour assignment workflow
+- [ ] Language skills documentation and communication preferences
+- [ ] Staff photo management and bio content with bilingual support (EN/NL)
+- [ ] Guide performance metrics and customer feedback integration
+
+### Contact Submissions Module
+- [ ] Customer inquiry management with response tracking and SLA monitoring
+- [ ] Automated email integration using Resend service with templates
+- [ ] Inquiry categorization and priority assignment with escalation rules
+- [ ] Response templates for common inquiries with multilingual support
+- [ ] Contact analytics with response time tracking and satisfaction metrics
+
+### Content Management Module
+- [ ] About page content editing with rich text capabilities and media integration
+- [ ] Homepage section management (hero, testimonials, features) with A/B testing
+- [ ] Blog content management for cultural and wildlife articles with SEO optimization
+- [ ] SEO metadata management for all content pages with preview functionality
+- [ ] Content versioning and approval workflow for quality control
+
+---
+
+## Phase 5: Advanced Features & E-commerce
+**Status**: ⬜ Optional for MVP
+**Priority**: Enhanced Business Capabilities
+
+### Shop/Products Management Module
+- [ ] Product catalog with inventory tracking and variant management
+- [ ] Order processing and fulfillment workflow with shipping integration
+- [ ] Customer order history and support ticket integration
+- [ ] Product media management and pricing strategies with discount rules
+- [ ] E-commerce analytics with sales performance and customer behavior
+
+### Gallery Management Module
+- [ ] Photo and video upload with categorization and tagging system
+- [ ] Gallery organization by tour, location, and activity type with metadata
+- [ ] Media optimization and responsive image generation for web performance
+- [ ] Public gallery display with lightbox functionality and social sharing
+- [ ] Media analytics with view counts and engagement tracking
+
+### User Management Module
+- [ ] Customer account management with comprehensive booking history
+- [ ] Admin user roles and permission management with granular access control
+- [ ] User activity tracking and engagement analytics with behavior insights
+- [ ] Customer communication preferences and marketing consent management
+- [ ] User segmentation and targeted marketing campaign capabilities
+
+### Analytics & Reporting Module
+- [ ] Business intelligence dashboard with key performance indicators
+- [ ] Booking trends analysis and seasonal performance reports with forecasting
+- [ ] Customer behavior tracking and conversion optimization recommendations
+- [ ] Financial reporting with profit margin analysis and cost tracking
+- [ ] Custom report builder with data export capabilities
+
+---
+
+## Phase 6: Security & Advanced Authentication
+**Status**: ⬜ Ongoing Security Requirements
+**Priority**: Security & Compliance
+
+### Advanced Authentication & Security
+- [ ] Multi-factor authentication for admin accounts with backup codes
+- [ ] Session management with automatic timeout and renewal policies
+- [ ] Audit logging for all admin actions and data modifications
+- [ ] API rate limiting and request validation with threat detection
+- [ ] Security monitoring and intrusion detection with alert system
+
+### Compliance & Data Protection
+- [ ] Data encryption for sensitive customer information (PII, payment data)
+- [ ] GDPR compliance tools for data export and deletion requests
+- [ ] Backup and disaster recovery procedures with automated testing
+- [ ] Security monitoring and intrusion detection with incident response
+- [ ] Privacy policy enforcement and consent management integration
 
 ---
 

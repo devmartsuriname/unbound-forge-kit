@@ -382,7 +382,162 @@ Refer to `/docs/DesignGuide.md` for complete implementation guidelines.
 - Automated testing on CI
 - Deployment automation
 
+## Backend Layout & Module Architecture
+
+### Layout Structure
+
+The backend administration interface follows a modern, responsive layout pattern with integrated theme switching capabilities:
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│ Header Bar (Global theme toggle + user menu)                │
+├─────────────────────────────────────────────────────────────┤
+│ Sidebar Nav  │ Main Content Area                            │
+│              │                                              │
+│ ◉ Dashboard  │ ┌─────────────────────────────────────────┐ │
+│ ◉ Tours      │ │                                         │ │
+│ ◉ Bookings   │ │        Dynamic Content                  │ │
+│ ◉ Payments   │ │        (Based on sidebar selection)     │ │
+│ ◉ FAQ        │ │                                         │ │
+│ ◉ Team       │ │                                         │ │
+│ ◉ Contact    │ │                                         │ │
+│ ◉ Content    │ │                                         │ │
+│ ◉ Shop       │ │                                         │ │
+│ ◉ Gallery    │ │                                         │ │
+│ ◉ Users      │ │                                         │ │
+│ ◉ Analytics  │ │                                         │ │
+│ ◉ Settings   │ └─────────────────────────────────────────┘ │
+│              │                                              │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### Module Architecture
+
+#### Phase 2: Foundation Setup
+**Status**: Pending Implementation
+**Priority**: Critical Infrastructure
+
+- **Admin Layout Component**: Sidebar navigation with Shadcn Sidebar integration
+- **Theme System**: Light/Dark/System mode switching using Tourex CSS variables
+- **Authentication**: Supabase Auth with role-based access control
+- **Protected Routes**: Admin route guards with permission checking
+- **Responsive Design**: Mobile-first admin interface following Tourex breakpoints
+
+#### Phase 3: Core Modules (Priority 1)
+**Status**: Backend Foundation Required
+
+**Dashboard Module**
+- Real-time booking statistics and tour performance metrics
+- Recent bookings overview with status indicators
+- Revenue tracking and payment summaries
+- Quick access to pending tasks and notifications
+
+**Tours Management Module**
+- CRUD operations for tours with bilingual content (EN/NL)
+- Tour itinerary management with day-by-day scheduling
+- Pricing configuration and seasonal adjustments
+- Tour media gallery management and featured image selection
+
+**Bookings Management Module**
+- Complete booking lifecycle management from inquiry to completion
+- Passenger information management with contact details
+- Booking status tracking (pending, confirmed, paid, completed, cancelled)
+- Departure capacity management and availability updates
+
+**Payments & Finance Module**
+- Payment processing integration with Stripe/PayPal/Bank transfers
+- Financial reporting with booking revenue analysis
+- Refund processing and payment dispute management
+- Automated payment confirmation and receipt generation
+
+#### Phase 4: Content Management (Priority 2)
+**Status**: Phase 3 Dependencies
+
+**FAQ Management Module**
+- Four-category FAQ system (Booking & Payment, Tour Preparation, During Tour, Health & Safety)
+- Bilingual FAQ content management with rich text editing
+- FAQ ordering and categorization with drag-and-drop interface
+- Public FAQ display with search and filtering capabilities
+
+**Team Management Module**
+- Staff profile management with certifications and specialties
+- Guide availability tracking and tour assignment
+- Language skills documentation and communication preferences
+- Staff photo management and bio content (EN/NL)
+
+**Contact Submissions Module**
+- Customer inquiry management with response tracking
+- Automated email integration using Resend service
+- Inquiry categorization and priority assignment
+- Response templates for common inquiries
+
+**Content Management Module**
+- About page content editing with rich text capabilities
+- Homepage section management (hero, testimonials, features)
+- Blog content management for cultural and wildlife articles
+- SEO metadata management for all content pages
+
+#### Phase 5: Advanced Features (Priority 3)
+**Status**: Optional for MVP
+
+**Shop/Products Management Module**
+- Product catalog with inventory tracking and variant management
+- Order processing and fulfillment workflow
+- Customer order history and support ticket integration
+- Product media management and pricing strategies
+
+**Gallery Management Module**
+- Photo and video upload with categorization and tagging
+- Gallery organization by tour, location, and activity type
+- Media optimization and responsive image generation
+- Public gallery display with lightbox functionality
+
+**User Management Module**
+- Customer account management with booking history
+- Admin user roles and permission management
+- User activity tracking and engagement analytics
+- Customer communication preferences and marketing consent
+
+**Analytics & Reporting Module**
+- Business intelligence dashboard with key performance indicators
+- Booking trends analysis and seasonal performance reports
+- Customer behavior tracking and conversion optimization
+- Financial reporting with profit margin analysis
+
+#### Phase 6: Authentication & Security Enhancements (Priority 4)
+**Status**: Ongoing Security Requirements
+
+**Advanced Authentication**
+- Multi-factor authentication for admin accounts
+- Session management with automatic timeout and renewal
+- Audit logging for all admin actions and data modifications
+- API rate limiting and request validation
+
+**Security & Compliance**
+- Data encryption for sensitive customer information
+- GDPR compliance tools for data export and deletion
+- Backup and disaster recovery procedures
+- Security monitoring and intrusion detection
+
+### Theme Integration Strategy
+
+The backend interface leverages the established Tourex Design System:
+
+- **CSS Variables**: All `--tg-*` variables from the Design Guide for consistent theming
+- **Component Library**: Shadcn components styled with Tourex color tokens
+- **Responsive Breakpoints**: Mobile-first design using Tourex grid system
+- **Typography**: Poppins/Outfit font families with established scale
+- **Dark Mode**: Automatic theme switching with system preference detection
+
+### Technical Implementation Notes
+
+- **Authentication**: Supabase RLS policies for secure data access
+- **Real-time Updates**: Supabase realtime subscriptions for live data
+- **Form Validation**: Zod schemas with bilingual error messages
+- **State Management**: Redux Toolkit for complex admin state
+- **File Uploads**: Supabase Storage for media and document management
+
 ---
 
-**Last Updated**: Initial architecture design
-**Next Review**: After Phase 1 implementation
+**Last Updated**: Backend Layout Plan created (Phase 1B Ready)
+**Next Review**: After Phase 2 foundation implementation
