@@ -49,24 +49,24 @@ const Banner = () => {
                   <div className="row justify-content-center">
                      <div className="col-xl-10">
                         <div className="tg-hero-content text-center">
-                           <div className="tg-hero-title-box mb-10">
-                              <h5 className="tg-hero-subtitle mb-5 wow fadeInUp" data-wow-delay=".3s" data-wow-duration=".7s">* This offer valid till 22 August</h5>
-                              <h2 className="tg-hero-title wow fadeInUp" data-wow-delay=".4s" data-wow-duration=".9s">Maldives island</h2>
-                              <p className="tg-hero-para mb-0  wow fadeInUp" data-wow-delay=".6s" data-wow-duration="1.1s">when an unknown printer took ar galley offer type area <br /> year anddey make specimen book</p>
-                           </div>
-                           <div className="tg-hero-price-wrap mb-35 d-flex align-items-center justify-content-center  wow fadeInUp" data-wow-delay=".7s" data-wow-duration="1.3s">
-                              <p className="mr-15">Booking Start From</p>
-                              <div className="tg-hero-price d-flex">
-                                 <span className="hero-dolar">$</span>
-                                 <span className="hero-price">299</span>
-                                 <span className="night">/night</span>
-                              </div>
-                           </div>
-                           <div className="tg-hero-btn-box  wow fadeInUp" data-wow-delay=".8s" data-wow-duration="1.5s">
-                              <Link to="/contact" className="tg-btn tg-btn-switch-animation">
-                                 <Button text="Take a Tour" />
-                              </Link>
-                           </div>
+                            <div className="tg-hero-title-box mb-10">
+                               <h5 className="tg-hero-subtitle mb-5 wow fadeInUp" data-wow-delay=".3s" data-wow-duration=".7s">Experience the Untouched Wilderness</h5>
+                               <h2 className="tg-hero-title wow fadeInUp" data-wow-delay=".4s" data-wow-duration=".9s">Authentic Jungle Adventures in Upper Suriname</h2>
+                               <p className="tg-hero-para mb-0  wow fadeInUp" data-wow-delay=".6s" data-wow-duration="1.1s">Discover pristine rainforest, traditional villages, and <br /> unforgettable wildlife encounters with expert local guides</p>
+                            </div>
+                            <div className="tg-hero-price-wrap mb-35 d-flex align-items-center justify-content-center  wow fadeInUp" data-wow-delay=".7s" data-wow-duration="1.3s">
+                               <p className="mr-15">Tours Starting From</p>
+                               <div className="tg-hero-price d-flex">
+                                  <span className="hero-dolar">€</span>
+                                  <span className="hero-price">350</span>
+                                  <span className="night">/person</span>
+                               </div>
+                            </div>
+                            <div className="tg-hero-btn-box  wow fadeInUp" data-wow-delay=".8s" data-wow-duration="1.5s">
+                               <Link to="/tours" className="tg-btn tg-btn-switch-animation">
+                                  <Button text="Explore Our Tours" />
+                               </Link>
+                            </div>
                         </div>
                      </div>
                   </div>

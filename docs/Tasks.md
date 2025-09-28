@@ -37,31 +37,34 @@
 
 ---
 
-## Phase 1: Content Pass
-**Status**: ⬜ Not Started
+## Phase 1: Content Pass  
+**Status**: 🔄 In Progress
 
 ### Internationalization
-- [ ] Setup i18next configuration
-- [ ] Create translation files (en.json, nl.json)
+- [x] Setup i18next configuration
+- [x] Create translation files (en.json, nl.json)
+- [x] Expand translation content for tours and pages
 - [ ] Add language switcher component
-- [ ] Externalize all hardcoded strings
+- [ ] Externalize remaining hardcoded strings
 - [ ] Test language switching functionality
 
 ### Home Page (Home Three)
-- [ ] Replace hero section with jungle resort USPs
-- [ ] Update hero imagery (jungle/resort)
-- [ ] Replace tour cards with PingPe tours
-- [ ] Update testimonials section
+- [x] Replace hero section with jungle resort USPs
+- [x] Update hero imagery placeholders
+- [x] Replace tour cards with PingPe tours
+- [ ] Update testimonials section  
 - [ ] Add WhatsApp booking CTA
 - [ ] Update footer content
 
 ### Tours Section
-- [ ] Replace demo tours with jungle tour content
-- [ ] Create tour detail page structure
-- [ ] Add itinerary day-by-day sections
-- [ ] Include/exclude lists per tour
-- [ ] Practical information sections
-- [ ] Gallery integration
+- [x] Create comprehensive tours data structure
+- [x] Replace demo tours with 5 authentic PingPe tours
+- [x] Add bilingual content (EN/NL) for all tours
+- [x] Create detailed itinerary day-by-day sections
+- [x] Include/exclude lists per tour
+- [x] Practical information sections
+- [ ] Connect tour detail pages to new data
+- [ ] Gallery integration for individual tours
 - [ ] FAQ sections per tour
 - [ ] Booking CTA buttons
 

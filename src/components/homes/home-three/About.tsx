@@ -25,8 +25,8 @@ const About = () => {
                            tailored itinerary that exceeds your expectations.</p>
                      </div>
                      <div className="tp-about-btn-wrap wow fadeInUp" data-wow-delay=".7s" data-wow-duration=".9s">
-                        <Link to="/tour-details" className="tg-btn tg-btn-transparent tg-btn-switch-animation">
-                           <Button text="Take a Tour" />
+                         <Link to="/tours" className="tg-btn tg-btn-transparent tg-btn-switch-animation">
+                            <Button text="View Our Tours" />
                         </Link>
                      </div>
                   </div>

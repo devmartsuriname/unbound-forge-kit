@@ -15,12 +15,40 @@
     "loading": "Loading...",
     "book_now": "Book Now",
     "learn_more": "Learn More",
-    "contact_us": "Contact Us"
+    "contact_us": "Contact Us",
+    "from_price": "From €",
+    "per_person": "/person",
+    "days": "Days",
+    "view_details": "View Details"
   },
   "pages": {
     "home": {
       "title": "Jungle Resort PingPe",
-      "subtitle": "Exclusive Jungle Tours in Suriname"
+      "subtitle": "Exclusive Jungle Tours in Suriname",
+      "hero": {
+        "title": "Authentic Jungle Adventures in Upper Suriname",
+        "subtitle": "Discover pristine rainforest, traditional villages, and unforgettable wildlife encounters",
+        "cta": "Explore Our Tours"
+      }
+    },
+    "tours": {
+      "title": "Jungle Tours & Expeditions",
+      "subtitle": "Choose your adventure in pristine Surinamese rainforest",
+      "filter_all": "All Tours",
+      "filter_duration": "Duration",
+      "filter_difficulty": "Difficulty"
     }
+  },
+  "tours": {
+    "difficulty": {
+      "easy": "Easy",
+      "moderate": "Moderate",
+      "challenging": "Challenging"
+    },
+    "includes": "What's Included",
+    "excludes": "What's Excluded",
+    "itinerary": "Day-by-Day Itinerary",
+    "practical_info": "Practical Information",
+    "max_participants": "Maximum Participants"
   }
 }

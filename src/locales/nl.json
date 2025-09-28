@@ -15,12 +15,40 @@
     "loading": "Laden...",
     "book_now": "Boek Nu",
     "learn_more": "Meer Weten",
-    "contact_us": "Contact Ons"
+    "contact_us": "Contact Ons",
+    "from_price": "Vanaf €",
+    "per_person": "/persoon",
+    "days": "Dagen",
+    "view_details": "Bekijk Details"
   },
   "pages": {
     "home": {
       "title": "Jungle Resort PingPe",
-      "subtitle": "Exclusieve Jungle Tours in Suriname"
+      "subtitle": "Exclusieve Jungle Tours in Suriname",
+      "hero": {
+        "title": "Authentieke Jungle Avonturen in Boven-Suriname",
+        "subtitle": "Ontdek ongerept regenwoud, traditionele dorpen en onvergetelijke wildlife ontmoetingen",
+        "cta": "Ontdek Onze Tours"
+      }
+    },
+    "tours": {
+      "title": "Jungle Tours & Expedities",
+      "subtitle": "Kies je avontuur in ongerept Surinaams regenwoud",
+      "filter_all": "Alle Tours",
+      "filter_duration": "Duur",
+      "filter_difficulty": "Moeilijkheidsgraad"
     }
+  },
+  "tours": {
+    "difficulty": {
+      "easy": "Gemakkelijk",
+      "moderate": "Matig",
+      "challenging": "Uitdagend"
+    },
+    "includes": "Inbegrepen",
+    "excludes": "Niet Inbegrepen",
+    "itinerary": "Dag-tot-Dag Reisschema",
+    "practical_info": "Praktische Informatie",
+    "max_participants": "Maximum Deelnemers"
   }
 }

@@ -4,7 +4,7 @@ import Isotope from "isotope-layout";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux"
 import { addToWishlist } from "../../../redux/features/wishlistSlice";
-import listing_data from "../../../data/ListingData";
+import ping_pe_listing_data from "../../../data/PingPeListingData";
 
 interface TabData {
    title: string;
@@ -96,10 +96,10 @@ const Listing = () => {
          <div className="container">
             <div className="row">
                <div className="col-12">
-                  <div className="tg-listing-section-title text-center mb-35">
-                     <h5 className="tg-section-subtitle wow fadeInUp" data-wow-delay=".3s" data-wow-duration=".5s">Most Popular Tour Packages </h5>
-                     <h2 className="mb-15 wow fadeInUp" data-wow-delay=".4s" data-wow-duration=".6s">Something Amazing Waiting For you</h2>
-                  </div>
+                   <div className="tg-listing-section-title text-center mb-35">
+                      <h5 className="tg-section-subtitle wow fadeInUp" data-wow-delay=".3s" data-wow-duration=".5s">Adventure Awaits in the Rainforest</h5>
+                      <h2 className="mb-15 wow fadeInUp" data-wow-delay=".4s" data-wow-duration=".6s">Our Jungle Expeditions</h2>
+                   </div>
                </div>
                <div className="col-lg-12">
                   <div className="tg-listing-menu-nav project__menu-nav mb-40 wow fadeInUp" data-wow-delay=".5s" data-wow-duration=".9s">
@@ -123,11 +123,11 @@ const Listing = () => {
                </div>
             </div>
             <div className="row isotope-wrapper project-active-two">
-               {listing_data.filter((items) => items.page === "home_3").map((item) => (
+               {ping_pe_listing_data.map((item) => (
                   <div key={item.id} className={`col-xxl-3 col-xl-4 col-lg-4 col-md-6 grid-item grid-sizer ${item.category} isotope-filter-item`}>
                      <div className="tg-listing-card-item mb-30">
-                        <div className="tg-listing-card-thumb fix mb-15 p-relative">
-                           <Link to="/tour-details">
+                         <div className="tg-listing-card-thumb fix mb-15 p-relative">
+                            <Link to="/tours">
                               <img className="tg-card-border w-100" src={item.thumb} alt="listing" />
                               {item.tag && <span className="tg-listing-item-price-discount shape">{item.tag}</span>}
                               {item.featured &&
@@ -147,7 +147,7 @@ const Listing = () => {
                            </div>
                         </div>
                         <div className="tg-listing-card-content">
-                           <h4 className="tg-listing-card-title"><Link to="/tour-details">{item.title}</Link></h4>
+                           <h4 className="tg-listing-card-title"><Link to="/tours">{item.title}</Link></h4>
                            <div className="tg-listing-card-duration-tour">
                               <span className="tg-listing-card-duration-map mb-5">
                                  <svg width="13" height="16" viewBox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -166,11 +166,11 @@ const Listing = () => {
                         </div>
                         <div className="tg-listing-card-price d-flex align-items-end justify-content-between">
                            <div className="tg-listing-card-price-wrap price-bg d-flex align-items-center">
-                              <span className="tg-listing-card-currency-amount mr-5">
-                                 {item.delete_price && <del className="tg-listing-card-currency-old">${item.delete_price}</del>}
-                                 <span className="currency-symbol">$</span>{item.price}
-                              </span>
-                              <span className="tg-listing-card-activity-person">/Person</span>
+                               <span className="tg-listing-card-currency-amount mr-5">
+                                  {item.delete_price && <del className="tg-listing-card-currency-old">€{item.delete_price}</del>}
+                                  <span className="currency-symbol">€</span>{item.price}
+                               </span>
+                               <span className="tg-listing-card-activity-person">/Person</span>
                            </div>
                            <div className="tg-listing-card-review space">
                               <span className="tg-listing-rating-icon"><i className="fa-sharp fa-solid fa-star"></i></span>
