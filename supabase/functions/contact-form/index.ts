@@ -1,13 +1,10 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
-import { Resend } from "npm:resend@4.0.0";
 
 const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY")!;
 const CONTACT_FORM_TO = Deno.env.get("CONTACT_FORM_TO") || "info@jungleresortpingpe.com";
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
 const SERVICE_ROLE = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
-
-const resend = new Resend(RESEND_API_KEY);
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -86,60 +83,76 @@ const handler = async (req: Request): Promise<Response> => {
       throw insertError;
     }
 
-    // Send notification email via Resend
+    // Send notification email via Resend API
     try {
-      const userEmailResponse = await resend.emails.send({
-        from: "PingPe Jungle Resort <noreply@resend.dev>",
-        to: [body.user_email],
-        subject: "Thank you for contacting PingPe Jungle Resort",
-        html: `
-          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-            <h2 style="color: #047857;">Thank you for your message!</h2>
-            <p>Dear ${body.user_name},</p>
-            <p>We have received your message and will get back to you within 24 hours.</p>
-            <div style="background-color: #f3f4f6; padding: 20px; margin: 20px 0; border-radius: 8px;">
-              <h3>Your message:</h3>
-              <p style="font-style: italic;">"${body.message}"</p>
+      const userEmailResponse = await fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${RESEND_API_KEY}`
+        },
+        body: JSON.stringify({
+          from: "PingPe Jungle Resort <noreply@resend.dev>",
+          to: [body.user_email],
+          subject: "Thank you for contacting PingPe Jungle Resort",
+          html: `
+            <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+              <h2 style="color: #047857;">Thank you for your message!</h2>
+              <p>Dear ${body.user_name},</p>
+              <p>We have received your message and will get back to you within 24 hours.</p>
+              <div style="background-color: #f3f4f6; padding: 20px; margin: 20px 0; border-radius: 8px;">
+                <h3>Your message:</h3>
+                <p style="font-style: italic;">"${body.message}"</p>
+              </div>
+              <p>We look forward to helping you plan your Suriname jungle adventure!</p>
+              <p>Best regards,<br>The PingPe Jungle Resort Team</p>
+              <hr style="margin: 30px 0; border: none; border-top: 1px solid #e5e7eb;">
+              <p style="font-size: 12px; color: #6b7280;">
+                Submission ID: ${submissionId}<br>
+                This is an automated message. Please do not reply to this email.
+              </p>
             </div>
-            <p>We look forward to helping you plan your Suriname jungle adventure!</p>
-            <p>Best regards,<br>The PingPe Jungle Resort Team</p>
-            <hr style="margin: 30px 0; border: none; border-top: 1px solid #e5e7eb;">
-            <p style="font-size: 12px; color: #6b7280;">
-              Submission ID: ${submissionId}<br>
-              This is an automated message. Please do not reply to this email.
-            </p>
-          </div>
-        `,
+          `
+        })
       });
 
-      console.log("User confirmation email sent:", userEmailResponse);
+      const userEmailData = await userEmailResponse.json();
+      console.log("User confirmation email sent:", userEmailData);
 
       // Send admin notification
-      const adminEmailResponse = await resend.emails.send({
-        from: "PingPe Contact Form <notifications@resend.dev>",
-        to: [CONTACT_FORM_TO],
-        subject: `New Contact Form Submission from ${body.user_name}`,
-        html: `
-          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-            <h2 style="color: #dc2626;">New Contact Form Submission</h2>
-            <div style="background-color: #f9fafb; padding: 20px; border-radius: 8px; margin: 20px 0;">
-              <p><strong>Name:</strong> ${body.user_name}</p>
-              <p><strong>Email:</strong> ${body.user_email}</p>
-              ${body.web ? `<p><strong>Website:</strong> ${body.web}</p>` : ''}
-              <p><strong>Language:</strong> ${body.language || 'en'}</p>
-              <p><strong>Submission ID:</strong> ${submissionId}</p>
-              <p><strong>Submitted:</strong> ${new Date().toLocaleString()}</p>
-              <p><strong>IP Address:</strong> ${ip || 'Unknown'}</p>
+      const adminEmailResponse = await fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${RESEND_API_KEY}`
+        },
+        body: JSON.stringify({
+          from: "PingPe Contact Form <notifications@resend.dev>",
+          to: [CONTACT_FORM_TO],
+          subject: `New Contact Form Submission from ${body.user_name}`,
+          html: `
+            <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+              <h2 style="color: #dc2626;">New Contact Form Submission</h2>
+              <div style="background-color: #f9fafb; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                <p><strong>Name:</strong> ${body.user_name}</p>
+                <p><strong>Email:</strong> ${body.user_email}</p>
+                ${body.web ? `<p><strong>Website:</strong> ${body.web}</p>` : ''}
+                <p><strong>Language:</strong> ${body.language || 'en'}</p>
+                <p><strong>Submission ID:</strong> ${submissionId}</p>
+                <p><strong>Submitted:</strong> ${new Date().toLocaleString()}</p>
+                <p><strong>IP Address:</strong> ${ip || 'Unknown'}</p>
+              </div>
+              <div style="background-color: #fff; padding: 20px; border-left: 4px solid #047857; margin: 20px 0;">
+                <h3>Message:</h3>
+                <p>${body.message}</p>
+              </div>
             </div>
-            <div style="background-color: #fff; padding: 20px; border-left: 4px solid #047857; margin: 20px 0;">
-              <h3>Message:</h3>
-              <p>${body.message}</p>
-            </div>
-          </div>
-        `,
+          `
+        })
       });
 
-      console.log("Admin notification email sent:", adminEmailResponse);
+      const adminEmailData = await adminEmailResponse.json();
+      console.log("Admin notification email sent:", adminEmailData);
 
     } catch (emailError) {
       console.error("Email sending error:", emailError);
