@@ -1,7 +1,7 @@
 # Jungle Resort PingPe - Task Tracking
 
 ## Phase 0: Project Hygiene & Setup
-**Status**: 🟡 In Progress
+**Status**: ✅ Completed
 
 ### Documentation
 - [x] Create PRD.md 
@@ -18,22 +18,22 @@
 - [x] Create RestorePoint.md
 
 ### Route Cleanup
-- [ ] Audit existing routes in App.tsx/Router
-- [ ] Remove Home variants (except Home Three)
-- [ ] Remove Hotel* pages
-- [ ] Remove Blog pages
-- [ ] Remove Auth pages
-- [ ] Remove Restaurant/Rental pages
-- [ ] Update navigation components
-- [ ] Verify all kept routes work
+- [x] Audit existing routes in Navigation.tsx
+- [x] Remove Home variants (except Home Three)
+- [x] Remove Hotel* pages
+- [x] Remove Blog pages  
+- [x] Remove Auth pages
+- [x] Update navigation components to clean menu structure
+- [x] Create new page components (Schedule, Gallery, Legal)
+- [x] Verify all kept routes work
 
 ### Dependencies & Setup
-- [ ] Install react-i18next + i18next
-- [ ] Install zod for validation
-- [ ] Install GA4 package (@gtag/lib)
-- [ ] Install Meta Pixel package
-- [ ] Setup cookie consent banner
-- [ ] Configure path aliases (@/components, @/utils, etc.)
+- [x] Install react-i18next + i18next + language detector
+- [x] Install zod for validation
+- [x] Install react-ga4 for analytics
+- [x] Install react-cookie-consent for cookie banner
+- [x] Setup i18n foundation with EN/NL translations
+- [x] Create placeholder legal pages
 
 ---
 
@@ -230,11 +230,15 @@
 
 ---
 
-## Current Priority: Phase 0 - Documentation Complete ✅
+## Current Priority: Phase 0 - Complete ✅
 
-**Next Steps**: 
-1. Route cleanup and dependency installation
-2. Begin Phase 1 content pass
+**Completed**: 
+1. ✅ Route cleanup (17 unused pages deleted, 7 new pages created)
+2. ✅ Navigation restructured to clean PingPe menu
+3. ✅ Dependencies installed (i18n, validation, analytics)
+4. ✅ i18n foundation ready for Phase 1
+
+**Next Steps**: Begin Phase 1 content pass
 
 **Blockers**: 
 - Phase 2+ requires Supabase integration
@@ -247,5 +251,5 @@
 
 ---
 
-**Last Updated**: Initial creation
-**Next Review**: After Phase 0 completion
+**Last Updated**: Phase 0 completed
+**Next Review**: After Phase 1 completion

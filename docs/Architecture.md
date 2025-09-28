@@ -76,34 +76,42 @@ src/
 
 ## Route Structure
 
-### Active Routes (Keep)
+### Active Routes (Phase 0 Complete)
 ```
-/ → Home (Home Three variant)
-/tours → Tours catalog
-/tours/:slug → Tour detail
-/about → About resort
-/pricing → Tour packages
-/schedule → Departure calendar
-/team → Guides & staff
-/gallery → Photo gallery
-/contact → Contact & location
-/faq → Frequently asked questions
-/legal/terms → Terms & conditions
-/legal/privacy → Privacy policy
-/legal/cookies → Cookie policy
-/shop → Resort crafts
-/shop/:slug → Product detail
-/cart → Shopping cart
-/checkout → Checkout process
+/ → HomeThreeMain (primary homepage)
+/tours → ToursMain (renamed from TourGridOneMain)
+/tours/:slug → TourDetailMain (renamed from TourDetailsOneMain)
+/about → AboutMain
+/pricing → PricingMain
+/schedule → ScheduleMain (NEW - departure calendar)
+/team → TeamMain
+/gallery → GalleryMain (NEW - photo galleries)
+/contact → ContactMain
+/faq → FaqMain
+/legal/terms → TermsMain (NEW - terms & conditions)
+/legal/privacy → PrivacyMain (NEW - privacy policy)  
+/legal/cookies → CookiesMain (NEW - cookie policy)
+/shop → ShopMain
+/shop/:slug → ShopDetailsMain
+/cart → CartMain
+/checkout → CheckoutMain
+/* → ErrorMain (404 fallback)
 ```
 
-### Removed Routes
-- All other Home variants
-- Hotel* pages
-- Blog/news pages
-- Auth pages (login/register)
-- Restaurant pages
-- Rental pages
+### Removed Routes (17 pages deleted)
+```
+✅ Home variants: /home-two, /home-four, /home-five, /home-six, /home-seven
+✅ Hotel pages: /hotel-grid, /tour-grid-1, /map-listing
+✅ Blog pages: /blog-grid, /blog-standard, /blog-details  
+✅ Auth pages: /login, /register
+✅ Other: /team-details, /wishlist, /tour-details-2
+```
+
+### Navigation Structure (Updated)
+```
+Home | Tours | About | Pricing | Schedule | Team | Gallery | FAQ | Shop | Contact
+```
+Legal pages accessible via footer links.
 
 ## State Management Architecture
 

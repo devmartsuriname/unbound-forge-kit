@@ -1,0 +1,26 @@
+{
+  "navigation": {
+    "home": "Home",
+    "tours": "Tours",
+    "about": "Over Ons",
+    "pricing": "Prijzen",
+    "schedule": "Planning",
+    "team": "Team",
+    "gallery": "Galerij",
+    "faq": "FAQ",
+    "shop": "Winkel",
+    "contact": "Contact"
+  },
+  "common": {
+    "loading": "Laden...",
+    "book_now": "Boek Nu",
+    "learn_more": "Meer Weten",
+    "contact_us": "Contact Ons"
+  },
+  "pages": {
+    "home": {
+      "title": "Jungle Resort PingPe",
+      "subtitle": "Exclusieve Jungle Tours in Suriname"
+    }
+  }
+}
