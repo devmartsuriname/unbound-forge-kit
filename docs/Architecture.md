@@ -350,6 +350,24 @@ class ErrorBoundary extends React.Component {
 - Environment-based configuration
 - Minimal vendor-specific code
 
+## Design System Integration
+
+### Design Foundation
+The entire application follows the **Tourex Design System** documented in `/docs/DesignGuide.md`. This includes:
+- **Color System**: CSS variables with `--tg-` prefix for theming
+- **Typography**: Poppins (body) and Outfit (display) font families
+- **Spacing**: Responsive padding utilities and Bootstrap grid extensions
+- **Components**: Standardized button variants, form elements, and utility classes
+
+### Backend Interface Consistency
+All admin interfaces and dashboard components must adhere to the Tourex design system:
+- Use existing color variables (`--tg-theme-primary`, `--tg-grey-*`, etc.)
+- Follow typography scale and spacing patterns
+- Implement responsive breakpoints and mobile-first design
+- Maintain accessibility standards and touch target sizes
+
+Refer to `/docs/DesignGuide.md` for complete implementation guidelines.
+
 ## Development Workflow
 
 ### Code Standards
