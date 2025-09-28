@@ -5,47 +5,65 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { supabase } from '../../integrations/supabase/client';
 import { useRef } from 'react';
 
-interface FormData {
+interface ContactFormData {
    user_name: string;
    user_email: string;
-   web: string;
+   web?: string;
    message: string;
 }
 
-const schema = yup
-   .object({
-      user_name: yup.string().required().label("Name"),
-      user_email: yup.string().required().email().label("Email"),
-      web: yup.string().required().label("Website"),
-      message: yup.string().required().label("Message"),
-   })
-   .required();
+const schema = yup.object().shape({
+   user_name: yup.string().required().label("Name"),
+   user_email: yup.string().required().email().label("Email"),
+   web: yup.string().optional().label("Website"),
+   message: yup.string().required().label("Message"),
+});
 
 const ContactForm = () => {
 
-   const { register, handleSubmit, reset, formState: { errors }, } = useForm<FormData>({ resolver: yupResolver(schema), });
+   const { register, handleSubmit, reset, formState: { errors }, } = useForm({ resolver: yupResolver(schema), });
 
    const form = useRef<HTMLFormElement>(null);
 
-   const sendEmail = async (formData: FormData) => {
+   const sendEmail = async (formData: any) => {
       try {
-         const { error } = await supabase
+         // Insert into database
+         const { data: submission, error } = await supabase
             .from('contact_submissions')
             .insert([{
                user_name: formData.user_name,
                user_email: formData.user_email,
-               web: formData.web,
+               web: formData.web || null,
                message: formData.message,
-            }]);
+            }])
+            .select()
+            .single();
 
          if (error) {
             toast.error('Failed to send message. Please try again.', { position: 'top-center' });
             return;
          }
 
-         toast.success('Message sent successfully', { position: 'top-center' });
+         // Send email notification
+         try {
+            await supabase.functions.invoke('send-contact-notification', {
+               body: {
+                  name: formData.user_name,
+                  email: formData.user_email,
+                  website: formData.web,
+                  message: formData.message,
+                  submissionId: submission.id,
+               },
+            });
+         } catch (emailError) {
+            console.warn('Email notification failed:', emailError);
+            // Don't fail the whole process if email fails
+         }
+
+         toast.success('Message sent successfully! We will get back to you soon.', { position: 'top-center' });
          reset();
       } catch (error) {
+         console.error('Error sending message:', error);
          toast.error('Failed to send message. Please try again.', { position: 'top-center' });
       }
    };

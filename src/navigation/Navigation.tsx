@@ -3,6 +3,7 @@ import { AuthProvider } from '../contexts/AuthContext';
 import AuthPage from '../pages/AuthPage';
 import { AdminLayout } from '../components/admin/AdminLayout';
 import AdminDashboard from '../pages/admin/AdminDashboard';
+import ContactSubmissions from '../pages/admin/ContactSubmissions';
 import HomeThreeMain from '../pages/HomeThreeMain';
 import ToursMain from '../pages/ToursMain';
 import TourDetailMain from '../pages/TourDetailMain';
@@ -47,6 +48,7 @@ const AppNavigation = () => {
           <Route path="/auth" element={<AuthPage />} />
           <Route path="/admin" element={<AdminLayout />}>
             <Route index element={<AdminDashboard />} />
+            <Route path="contact" element={<ContactSubmissions />} />
           </Route>
           <Route path="*" element={<ErrorMain />} />
         </Routes>

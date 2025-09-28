@@ -1,6 +1,7 @@
 import { useAuth } from '../../contexts/AuthContext';
 import { Button } from '../ui/button';
 import { SidebarTrigger } from '../ui/sidebar';
+import { ThemeToggle } from '../ui/theme-toggle';
 import { LogOut, User } from 'lucide-react';
 
 export function AdminHeader() {
@@ -18,6 +19,8 @@ export function AdminHeader() {
         <div className="flex-1" />
         
         <div className="flex items-center gap-2">
+          <ThemeToggle />
+          
           <div className="flex items-center gap-2 text-sm">
             <User className="h-4 w-4" />
             <span className="hidden sm:inline-block">
