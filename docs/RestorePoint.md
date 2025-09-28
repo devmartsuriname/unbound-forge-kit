@@ -89,10 +89,10 @@ npm run dev
 
 ---
 
-## Checkpoint 0.2 - Route Cleanup (Planned)
+## Checkpoint 0.2 - Route Cleanup ✅
 
-**Date**: [Pending]
-**Status**: PLANNED
+**Date**: Phase 0 Complete
+**Status**: ✅ COMPLETED
 **Branch/Tag**: `checkpoint-0.2-cleanup`
 
 ### Will Include
@@ -117,10 +117,32 @@ npm run dev
 
 ---
 
-## Checkpoint 1.0 - Content Pass Complete (Planned)
+## Checkpoint 1A.0 - Home & Tours Data Foundation ✅
+
+**Date**: Phase 1A Complete
+**Status**: ✅ COMPLETED
+**Branch/Tag**: `checkpoint-1a.0-home-tours`
+
+### What's Included
+- **Home Page Updates**: Hero banner and About section updated with PingPe content
+- **Tours Data Structure**: New ToursData.tsx with 5 sample tours and bilingual content
+- **Translation Integration**: Extended en.json and nl.json with new content
+- **Home Page Integration**: Tours listing connected to new data source
+
+### Verified Functionality
+- ✅ Home page displays updated hero content: "Authentic Jungle Adventures in Upper Suriname"
+- ✅ About section shows "Why Choose Jungle Resort PingPe" with eco-tourism content
+- ✅ Tours listing displays 5 sample tours from ToursData.tsx
+- ✅ Language switching works between EN/NL
+- ✅ "Explore Our Tours" CTA links to /tours correctly
+- ✅ No console errors or TypeScript issues
+
+---
+
+## Checkpoint 1.0 - Content Pass Complete (In Progress)
 
 **Date**: [Pending]
-**Status**: PLANNED  
+**Status**: IN PROGRESS - Phase 1A Complete
 **Branch/Tag**: `checkpoint-1.0-content`
 
 ### Will Include
