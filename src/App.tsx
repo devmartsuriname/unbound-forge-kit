@@ -2,6 +2,8 @@ import { HelmetProvider } from "react-helmet-async"
 import AppNavigation from "./navigation/Navigation"
 import { Provider } from 'react-redux'
 import store from "./redux/store"
+import { AuthProvider } from './contexts/AuthContext'
+import { Toaster } from './components/ui/toaster'
 
 function App() {
 
@@ -9,7 +11,10 @@ function App() {
     <>
       <Provider store={store}>
         <HelmetProvider>
-          <AppNavigation />
+          <AuthProvider>
+            <AppNavigation />
+            <Toaster />
+          </AuthProvider>
         </HelmetProvider>
       </Provider>
     </>

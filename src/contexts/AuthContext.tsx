@@ -40,6 +40,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
               
               setIsAdmin(!!data);
             } catch (error) {
+              console.log('No admin role found, this is normal for regular users');
               setIsAdmin(false);
             }
           }, 0);

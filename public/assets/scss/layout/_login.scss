@@ -8,8 +8,27 @@
         padding: 100px 85px 100px;
         background: var(--tp-common-white);
         box-shadow: 0px 30px 60px rgba(3, 4, 28, 0.1);
+        border-radius: 15px;
+        @media #{$xl} {
+            padding: 80px 65px 80px;
+        }
+        @media #{$lg} {
+            padding: 70px 55px 70px;
+        }
+        @media #{$md} {
+            padding: 60px 45px 60px;
+        }
+        @media #{$sm} {
+            padding: 50px 35px 50px;
+        }
         @media #{$xs} {
-            padding: 50px 25px 50px;
+            padding: 40px 25px 40px;
+        }
+    }
+    &-area{
+        @media #{$xs} {
+            padding-top: 80px !important;
+            padding-bottom: 80px !important;
         }
     }
     &-top{
@@ -17,14 +36,53 @@
             font-size: 34px;
             letter-spacing: -0.04em;
             margin-bottom: 6px;
+            @media #{$md} {
+                font-size: 30px;
+            }
+            @media #{$sm} {
+                font-size: 28px;
+            }
+            @media #{$xs} {
+                font-size: 26px;
+            }
+        }
+        & p{
+            @media #{$xs} {
+                font-size: 14px;
+            }
         }
     }
     &-navigate{
-        & a{
+        & a, & button{
             text-decoration: underline;
             font-size: 15px;
             text-transform: capitalize;
             color: var(--tg-common-black);
+            @media #{$xs} {
+                font-size: 14px;
+            }
+        }
+    }
+    &-form{
+        .input{
+            @media #{$xs} {
+                height: 48px;
+                line-height: 48px;
+                font-size: 14px;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+        .tg-btn{
+            @media #{$xs} {
+                min-height: 48px;
+                font-size: 14px;
+            }
+        }
+        .col-md-6{
+            @media #{$xs} {
+                margin-bottom: 25px !important;
+            }
         }
     }
 }
