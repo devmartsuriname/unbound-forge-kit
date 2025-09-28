@@ -2,7 +2,7 @@ import { toast } from 'react-toastify';
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
-import emailjs from '@emailjs/browser';
+import { supabase } from '../../integrations/supabase/client';
 import { useRef } from 'react';
 
 interface FormData {
@@ -27,18 +27,26 @@ const ContactForm = () => {
 
    const form = useRef<HTMLFormElement>(null);
 
-   const sendEmail = () => {
-      if (form.current) {
-         emailjs.sendForm('themedox', 'template_vvhaqp9', form.current, 'QOBCxT0bzNKEs-CwW')
-            .then(() => {
-               toast.success('Message sent successfully', { position: 'top-center' });
-               reset();
-            })
-            .catch(() => {
-               toast.error('Failed to send message. Please try again.', { position: 'top-center' });
-            });
-      } else {
-         toast.error('Form reference is null.', { position: 'top-center' });
+   const sendEmail = async (formData: FormData) => {
+      try {
+         const { error } = await supabase
+            .from('contact_submissions')
+            .insert([{
+               user_name: formData.user_name,
+               user_email: formData.user_email,
+               web: formData.web,
+               message: formData.message,
+            }]);
+
+         if (error) {
+            toast.error('Failed to send message. Please try again.', { position: 'top-center' });
+            return;
+         }
+
+         toast.success('Message sent successfully', { position: 'top-center' });
+         reset();
+      } catch (error) {
+         toast.error('Failed to send message. Please try again.', { position: 'top-center' });
       }
    };
 

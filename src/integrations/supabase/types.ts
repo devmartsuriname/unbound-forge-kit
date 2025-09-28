@@ -14,16 +14,276 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      contact_submissions: {
+        Row: {
+          created_at: string
+          id: string
+          message: string
+          status: string | null
+          updated_at: string
+          user_email: string
+          user_name: string
+          web: string | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          message: string
+          status?: string | null
+          updated_at?: string
+          user_email: string
+          user_name: string
+          web?: string | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          message?: string
+          status?: string | null
+          updated_at?: string
+          user_email?: string
+          user_name?: string
+          web?: string | null
+        }
+        Relationships: []
+      }
+      faqs: {
+        Row: {
+          answer: string
+          answer_nl: string
+          category: string
+          created_at: string
+          id: string
+          is_active: boolean | null
+          question: string
+          question_nl: string
+          sort_order: number | null
+          updated_at: string
+        }
+        Insert: {
+          answer: string
+          answer_nl: string
+          category: string
+          created_at?: string
+          id?: string
+          is_active?: boolean | null
+          question: string
+          question_nl: string
+          sort_order?: number | null
+          updated_at?: string
+        }
+        Update: {
+          answer?: string
+          answer_nl?: string
+          category?: string
+          created_at?: string
+          id?: string
+          is_active?: boolean | null
+          question?: string
+          question_nl?: string
+          sort_order?: number | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          created_at: string
+          first_name: string | null
+          id: string
+          language_preference: string | null
+          last_name: string | null
+          theme_preference: string | null
+          updated_at: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string
+          first_name?: string | null
+          id: string
+          language_preference?: string | null
+          last_name?: string | null
+          theme_preference?: string | null
+          updated_at?: string
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string
+          first_name?: string | null
+          id?: string
+          language_preference?: string | null
+          last_name?: string | null
+          theme_preference?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      team_members: {
+        Row: {
+          bio: string
+          bio_nl: string
+          certifications: Json | null
+          certifications_nl: Json | null
+          created_at: string
+          id: string
+          is_active: boolean | null
+          languages: Json | null
+          name: string
+          photo_url: string | null
+          role: string
+          role_nl: string
+          sort_order: number | null
+          specialties: Json | null
+          specialties_nl: Json | null
+          updated_at: string
+        }
+        Insert: {
+          bio: string
+          bio_nl: string
+          certifications?: Json | null
+          certifications_nl?: Json | null
+          created_at?: string
+          id?: string
+          is_active?: boolean | null
+          languages?: Json | null
+          name: string
+          photo_url?: string | null
+          role: string
+          role_nl: string
+          sort_order?: number | null
+          specialties?: Json | null
+          specialties_nl?: Json | null
+          updated_at?: string
+        }
+        Update: {
+          bio?: string
+          bio_nl?: string
+          certifications?: Json | null
+          certifications_nl?: Json | null
+          created_at?: string
+          id?: string
+          is_active?: boolean | null
+          languages?: Json | null
+          name?: string
+          photo_url?: string | null
+          role?: string
+          role_nl?: string
+          sort_order?: number | null
+          specialties?: Json | null
+          specialties_nl?: Json | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      tours: {
+        Row: {
+          created_at: string
+          description: string
+          description_nl: string
+          difficulty: string
+          duration: string
+          duration_nl: string
+          featured_image: string | null
+          gallery: Json | null
+          id: string
+          includes: Json | null
+          includes_nl: Json | null
+          is_active: boolean | null
+          itinerary: Json | null
+          itinerary_nl: Json | null
+          max_participants: number
+          price: number
+          slug: string
+          sort_order: number | null
+          title: string
+          title_nl: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          description: string
+          description_nl: string
+          difficulty: string
+          duration: string
+          duration_nl: string
+          featured_image?: string | null
+          gallery?: Json | null
+          id?: string
+          includes?: Json | null
+          includes_nl?: Json | null
+          is_active?: boolean | null
+          itinerary?: Json | null
+          itinerary_nl?: Json | null
+          max_participants?: number
+          price: number
+          slug: string
+          sort_order?: number | null
+          title: string
+          title_nl: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          description?: string
+          description_nl?: string
+          difficulty?: string
+          duration?: string
+          duration_nl?: string
+          featured_image?: string | null
+          gallery?: Json | null
+          id?: string
+          includes?: Json | null
+          includes_nl?: Json | null
+          is_active?: boolean | null
+          itinerary?: Json | null
+          itinerary_nl?: Json | null
+          max_participants?: number
+          price?: number
+          slug?: string
+          sort_order?: number | null
+          title?: string
+          title_nl?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          created_at: string
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "admin" | "moderator" | "user"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +410,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["admin", "moderator", "user"],
+    },
   },
 } as const
