@@ -5,8 +5,11 @@
 ===============================*/
 
 .pt-170{
-    @media #{$lg,$md,$sm,$xs} {
+    @media #{$lg,$md,$sm} {
         padding-top: 115px;
+    }
+    @media #{$xs} {
+        padding-top: 80px;
     }
 }
 .pt-165{
@@ -15,18 +18,27 @@
     }
 }
 .pt-160{
-    @media #{$lg,$md,$sm,$xs} {
+    @media #{$lg,$md,$sm} {
         padding-top: 100px;
+    }
+    @media #{$xs} {
+        padding-top: 70px;
     }
 }
 .pt-155{
-    @media #{$lg,$md,$sm,$xs} {
+    @media #{$lg,$md,$sm} {
         padding-top: 100px;
+    }
+    @media #{$xs} {
+        padding-top: 70px;
     }
 }
 .pt-150{
-    @media #{$lg,$md,$sm,$xs} {
+    @media #{$lg,$md,$sm} {
         padding-top: 100px;
+    }
+    @media #{$xs} {
+        padding-top: 70px;
     }
 }
 .pt-145{

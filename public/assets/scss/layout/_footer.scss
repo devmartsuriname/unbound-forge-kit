@@ -8,6 +8,11 @@
     &-widget{
         @media #{$md,$sm,$xs} {
             margin-left: 0;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        @media #{$xs} {
+            margin-bottom: 25px;
         }
         & p{
             line-height: 24px;
@@ -64,6 +69,10 @@
     }
     &-form{
         position: relative;
+        @media #{$xs} {
+            max-width: 280px;
+            margin: 0 auto;
+        }
         &-btn{
             width: 55px;
             height: 45px;
@@ -72,6 +81,10 @@
             position: absolute;
             top: 0;
             right: 0;
+            @media #{$xs} {
+                width: 45px;
+                height: 40px;
+            }
         }
         & input{
             border-radius: 5px;
@@ -83,6 +96,11 @@
             padding: 10px 50px 10px 16px;
             box-shadow: none;
             border: 1px solid transparent;
+            @media #{$xs} {
+                height: 40px;
+                font-size: 14px;
+                padding: 8px 45px 8px 12px;
+            }
             &:focus{
                 border-color: var(--tg-theme-primary);
             }

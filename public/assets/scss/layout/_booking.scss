@@ -11,6 +11,11 @@
                 flex-wrap: wrap;
                 @media #{$lg,$md,$sm,$xs} {
                     justify-content: flex-start!important;
+                    flex-direction: column;
+                    gap: 15px;
+                }
+                @media #{$xs} {
+                    gap: 10px;
                 }
             }
         }
@@ -25,8 +30,12 @@
             border: 1px solid #e1e1e1;
             border-radius: 15px;
             padding: 20px 40px 25px 40px;
+            @media #{$md,$sm} {
+                padding: 20px 25px 20px 25px;
+            }
             @media #{$xs} {
-                padding: 20px 30px 25px 30px;
+                padding: 15px 20px 20px 20px;
+                margin: 0 10px;
             }
         }
         &-title{

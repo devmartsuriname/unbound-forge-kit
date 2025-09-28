@@ -277,8 +277,12 @@
             }
             & .tg-hero-3-title {
                 font-size: 45px;
+                @media #{$md} {
+                    font-size: 40px;
+                }
                 @media #{$sm,$xs} {
-                    font-size: 37px;
+                    font-size: 32px;
+                    line-height: 1.2;
                 }
             }
         }
@@ -304,6 +308,10 @@
         &-spacing{
             padding-top: 230px;
             padding-bottom: 160px;
+            @media #{$md,$sm,$xs} {
+                padding-top: 120px;
+                padding-bottom: 80px;
+            }
         }
     }
     &-tu{

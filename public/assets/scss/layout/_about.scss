@@ -31,6 +31,10 @@
         margin: 0 40px;
         @media #{$lg,$md,$sm,$xs} {
             margin: 0;
+            text-align: center;
+        }
+        @media #{$xs} {
+            padding: 0 15px;
         }
     }
     &-details{

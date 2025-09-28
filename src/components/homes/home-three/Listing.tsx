@@ -96,7 +96,7 @@ const Listing = () => {
             </div>
             <div className="row isotope-wrapper project-active-two">
                {ping_pe_listing_data.map((item) => (
-                  <div key={item.id} className={`col-xxl-3 col-xl-4 col-lg-4 col-md-6 grid-item grid-sizer ${item.category} isotope-filter-item`}>
+                  <div key={item.id} className={`col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-sm-6 col-xs-12 grid-item grid-sizer ${item.category} isotope-filter-item`}>
                      <div className="tg-listing-card-item mb-30">
                          <div className="tg-listing-card-thumb fix mb-15 p-relative">
                             <Link to="/tours">
