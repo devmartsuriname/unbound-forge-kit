@@ -45,6 +45,41 @@
       "filter_difficulty": "Moeilijkheidsgraad"
     }
   },
+  "about": {
+    "subtitle": "Ontdek authentiek Suriname",
+    "title": "Ervaar het ongerepte regenwoud met Jungle Resort PingPe",
+    "description": "Wij zijn toegewijd aan het bieden van authentieke eco-toerisme ervaringen die je verbinden met Suriname's ongerepte regenwoud terwijl we lokale gemeenschappen ondersteunen. Onze deskundige gidsen, diepe lokale kennis en toewijding aan duurzaam toerisme zorgen voor onvergetelijke avonturen die zowel natuur als cultuur respecteren.",
+    "cta": "Ontdek Onze Tours",
+    "mission": "Onze missie is om transformerende jungle-ervaringen te creëren die diepe verbindingen met de natuur bevorderen terwijl we inheemse gemeenschappen ondersteunen en Suriname's kostbare regenwoud ecosysteem behouden.",
+    "sustainability": "Wij beoefenen verantwoord toerisme door groepsgroottes te beperken, lokale gidsen te gebruiken en ervoor te zorgen dat toerisme-inkomsten rechtstreeks ten goede komen aan de gemeenschappen die we bezoeken.",
+    "community": "Onze partnerschappen met Saramaccaanse, Aucaanse en Wayana gemeenschappen creëren authentieke culturele uitwisselingen die traditionele levenswijzen respecteren."
+  },
+  "team": {
+    "marcus": {
+      "name": "Marcus Amafo",
+      "role": "Hoofd Gids",
+      "specialty": "Jungle & Wildlife Specialist",
+      "description": "Met 15+ jaar ervaring als regenwoud gids, leidt Marcus onze meest uitdagende expedities met ongeëvenaarde kennis van diergedrag en jungle overleving."
+    },
+    "sarina": {
+      "name": "Sarina Kajaman",
+      "role": "Culturele Gids", 
+      "specialty": "Gemeenschaps Liaison & Inheemse Cultuur",
+      "description": "Sarina verbindt culturen met haar diepe begrip van inheemse tradities en 10+ jaar ervaring in het faciliteren van respectvolle gemeenschapsinteracties."
+    },
+    "robert": {
+      "name": "Robert Tjoe",
+      "role": "Operations Manager",
+      "specialty": "Veiligheid & Logistiek Coördinator", 
+      "description": "Robert zorgt ervoor dat elke expeditie soepel en veilig verloopt, met 12+ jaar expeditie management ervaring voor elke tour."
+    },
+    "melanie": {
+      "name": "Melanie Pawiroredjo", 
+      "role": "Gemeenschaps Coördinator",
+      "specialty": "Dorps Partnerschappen & Duurzaamheid",
+      "description": "Melanie ontwikkelt en onderhoudt onze gemeenschapspartnerschappen, waarbij toerisme lokale families ten goede komt terwijl traditionele levensstijlen worden gerespecteerd."
+    }
+  },
   "tours": {
     "difficulty": {
       "easy": "Gemakkelijk",

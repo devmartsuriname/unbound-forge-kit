@@ -45,6 +45,41 @@
       "filter_difficulty": "Difficulty"
     }
   },
+  "about": {
+    "subtitle": "Discover authentic Suriname",
+    "title": "Experience the untouched rainforest with Jungle Resort PingPe",
+    "description": "We are dedicated to providing authentic eco-tourism experiences that connect you with Suriname's pristine rainforest while supporting local communities. Our expert guides, deep local knowledge, and commitment to sustainable tourism ensure unforgettable adventures that respect both nature and culture.",
+    "cta": "Explore Our Tours",
+    "mission": "Our mission is to create transformative jungle experiences that foster deep connections with nature while supporting indigenous communities and preserving Suriname's precious rainforest ecosystem.",
+    "sustainability": "We practice responsible tourism by limiting group sizes, using local guides, and ensuring that tourism revenue directly benefits the communities we visit.",
+    "community": "Our partnerships with Saramaccan, Aucan, and Wayana communities create authentic cultural exchanges that respect traditional ways of life."
+  },
+  "team": {
+    "marcus": {
+      "name": "Marcus Amafo",
+      "role": "Head Guide",
+      "specialty": "Jungle & Wildlife Specialist",
+      "description": "With 15+ years of rainforest guiding experience, Marcus leads our most challenging expeditions with unmatched knowledge of wildlife behavior and jungle survival."
+    },
+    "sarina": {
+      "name": "Sarina Kajaman", 
+      "role": "Cultural Guide",
+      "specialty": "Community Liaison & Indigenous Culture",
+      "description": "Sarina bridges cultures with her deep understanding of indigenous traditions and 10+ years of experience facilitating respectful community interactions."
+    },
+    "robert": {
+      "name": "Robert Tjoe",
+      "role": "Operations Manager", 
+      "specialty": "Safety & Logistics Coordinator",
+      "description": "Robert ensures every expedition runs smoothly and safely, bringing 12+ years of expedition management experience to every tour."
+    },
+    "melanie": {
+      "name": "Melanie Pawiroredjo",
+      "role": "Community Coordinator",
+      "specialty": "Village Partnerships & Sustainability", 
+      "description": "Melanie develops and maintains our community partnerships, ensuring tourism benefits local families while respecting traditional lifestyles."
+    }
+  },
   "tours": {
     "difficulty": {
       "easy": "Easy",
