@@ -39,14 +39,14 @@ export default function AuthPage() {
                     <h2>Admin Portal</h2>
                     <p>Sign in to access the admin dashboard</p>
                   </div>
-                  <LoginArea noAreaWrapper hideHeading />
+                  <LoginArea />
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
+    );
   }
 
   // Regular public auth layout with header/footer
