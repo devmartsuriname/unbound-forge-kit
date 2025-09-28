@@ -1,5 +1,4 @@
-/* Admin Tourex Theme Integration */
-@use '../../../public/assets/scss/utils' as *;
+/* Admin Tourex Theme Integration - CSS Version */
 
 /* Admin Layout Base */
 .tg-admin-layout {
@@ -12,7 +11,7 @@
 .tg-admin-sidebar {
     background: var(--tg-common-white);
     border-right: 1px solid var(--tg-border-1);
-    @include box-shadow(0px 4px 20px rgba(0, 0, 0, 0.08));
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
     
     &.collapsed {
         width: 80px;
@@ -95,7 +94,7 @@
                     text-decoration: none;
                     font-size: 14px;
                     font-weight: 500;
-                    @include tg-transition();
+                    transition: all 0.3s ease-out;
                     
                     .nav-icon {
                         width: 20px;
@@ -128,7 +127,7 @@
     align-items: center;
     padding: 0 24px;
     justify-content: space-between;
-    @include box-shadow(0px 2px 8px rgba(0, 0, 0, 0.04));
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.04);
     
     .header-left {
         display: flex;
@@ -163,7 +162,7 @@
     border-radius: 6px;
     color: var(--tg-grey-2);
     cursor: pointer;
-    @include tg-transition();
+    transition: all 0.3s ease-out;
     
     &:hover {
         background: var(--tg-grey-8);
@@ -175,7 +174,7 @@
 .tg-admin-card {
     background: var(--tg-common-white);
     border-radius: 12px;
-    @include box-shadow(0px 4px 20px rgba(0, 0, 0, 0.06));
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.06);
     border: 1px solid var(--tg-border-3);
     overflow: hidden;
     
@@ -255,12 +254,12 @@
         border: 1px solid var(--tg-border-3);
         text-decoration: none;
         margin-bottom: 12px;
-        @include tg-transition();
+        transition: all 0.3s ease-out;
         
         &:hover {
             border-color: var(--tg-theme-primary);
             background: rgba(86, 12, 227, 0.02);
-            @include transform(translateY(-1px));
+            transform: translateY(-1px);
         }
         
         .action-title {
@@ -280,7 +279,6 @@
 
 /* Buttons */
 .tg-admin-btn {
-    @extend .tg-btn;
     font-size: 14px;
     padding: 10px 20px;
     border-radius: 8px;
@@ -369,7 +367,7 @@
 }
 
 /* Responsive */
-@media #{$lg} {
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
     .tg-admin-sidebar {
         &.expanded {
             width: 260px;
@@ -377,7 +375,7 @@
     }
 }
 
-@media #{$md} {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
     .tg-admin-header {
         padding: 0 16px;
     }
@@ -391,18 +389,18 @@
     }
 }
 
-@media #{$sm} {
+@media only screen and (min-width: 576px) and (max-width: 767px) {
     .tg-admin-sidebar {
         position: fixed;
         top: 0;
         left: 0;
         height: 100vh;
         z-index: 1000;
-        @include transform(translateX(-100%));
-        @include tg-transition();
+        transform: translateX(-100%);
+        transition: all 0.3s ease-out;
         
         &.open {
-            @include transform(translateX(0));
+            transform: translateX(0);
         }
     }
     
@@ -415,7 +413,7 @@
     }
 }
 
-@media #{$xs} {
+@media (max-width: 575px) {
     .tg-admin-card .card-header {
         padding: 16px 20px 12px;
         
