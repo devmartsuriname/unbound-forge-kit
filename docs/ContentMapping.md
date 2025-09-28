@@ -59,24 +59,46 @@
 - Filtering by duration, difficulty, price, and rating
 - Bilingual support (EN/NL)
 
-## Image Placeholders Updated
+## Authentic Images Integrated (Phase 1A.4)
 
-### Hero Section Images
-- `/assets/img/hero/jungle-resort-hero-1.jpg` through `jungle-resort-hero-5.jpg`
+### Hero Section Images (Authentic PingPe Content)
+- `/assets/img/hero/jungle-resort-hero-1.jpg` - PingPe resort view (sourced from official website)
+- `/assets/img/hero/jungle-resort-hero-2.jpg` - Traditional village scene (sourced from official website)  
+- `/assets/img/hero/jungle-resort-hero-3.jpg` - Ananasberg location (sourced from official website)
+- `/assets/img/hero/jungle-resort-hero-4.jpg` - Upper Suriname River with traditional boats
+- `/assets/img/hero/jungle-resort-hero-5.jpg` - Sunset over river with village silhouettes
 
-### Partner Destination Images  
-- `/assets/img/partners/brownsberg-nature-park.jpg`
-- `/assets/img/partners/raleighvallen-voltzberg.jpg`
-- `/assets/img/partners/galibi-sea-turtle.jpg`
-- `/assets/img/partners/commewijne-river-cruise.jpg`
+### Tour Images (Authentic Experiences)
+- `/assets/img/listing/listing-1.jpg` - Traditional Saramaccan village life
+- `/assets/img/listing/listing-2.jpg` - Rainforest discovery with wildlife guide
+- `/assets/img/listing/listing-3.jpg` - Jungle expedition adventure trekking
+- `/assets/img/listing/listing-4.jpg` - Cultural crafts workshop experience
+- `/assets/img/listing/listing-5.jpg` - Back-to-basic expedition campsite
 
-### Blog Images
-- `/assets/img/blog/cultural-highlights-suriname.jpg`
-- `/assets/img/blog/suriname-wildlife-photography.jpg`
-- `/assets/img/blog/traditional-villages-suriname.jpg`
+### Tour Detail Gallery Images
+- `/assets/img/tour-details/thumb-1.jpg` - Tour group jungle exploration
+- `/assets/img/tour-details/thumb-2.jpg` - Traditional dugout canoe journey
+- `/assets/img/tour-details/thumb-3.jpg` - Exotic birds and wildlife spotting
+- `/assets/img/tour-details/thumb-4.jpg` - Traditional village cultural workshop
 
-### Choose Section Images
-- `/assets/img/chose/jungle-resort-pingpe-experience.jpg`
+### Partner Destination Images (Authentic Locations)
+- `/assets/img/partners/brownsberg-nature-park.jpg` - STINASU Brownsberg waterfalls
+- `/assets/img/partners/raleighvallen-voltzberg.jpg` - Granite dome mountains
+- `/assets/img/partners/galibi-sea-turtle.jpg` - Night turtle conservation tour
+- `/assets/img/partners/commewijne-river-cruise.jpg` - River cruise with wildlife
+
+### Blog Images (Cultural & Wildlife Content)
+- `/assets/img/blog/cultural-highlights-suriname.jpg` - Traditional ceremony
+- `/assets/img/blog/suriname-wildlife-photography.jpg` - Professional wildlife photography
+- `/assets/img/blog/traditional-villages-suriname.jpg` - River villages architecture
+
+### About/Choose Section Images
+- `/assets/img/chose/jungle-resort-pingpe-experience.jpg` - PingPe eco-lodge facilities
+
+### Image Alt Text (Bilingual SEO)
+- All images have descriptive alt text in EN/NL
+- Alt text stored in translation files under `images.alt.*`
+- SEO-optimized for Suriname jungle tourism keywords
 
 ## Translation Files
 - Both `en.json` and `nl.json` support all homepage content

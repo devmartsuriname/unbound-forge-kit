@@ -56,5 +56,31 @@
     "itinerary": "Day-by-Day Itinerary",
     "practical_info": "Practical Information",
     "max_participants": "Maximum Participants"
+  },
+  "images": {
+    "alt": {
+      "hero_jungle_resort": "Authentic jungle resort view along Upper Suriname River",
+      "hero_waterfalls": "Pristine waterfalls in Surinamese rainforest",
+      "hero_village": "Traditional Saramaccan village along river",
+      "hero_river_sunset": "Sunset over Upper Suriname River with traditional boats",
+      "hero_canopy": "Dense rainforest canopy in Upper Suriname",
+      "tour_village_wildlife": "Traditional village and wildlife exploration in Suriname",
+      "tour_upper_discovery": "Upper Suriname discovery tour through pristine rainforest",
+      "tour_jungle_adventure": "Extended jungle adventure expedition",
+      "tour_rainforest_immersion": "Deep rainforest immersion experience",
+      "tour_back_to_basic": "Back-to-basic jungle expedition campsite",
+      "partner_brownsberg": "Brownsberg Nature Park waterfalls and hiking trails",
+      "partner_raleighvallen": "Raleighvallen granite dome mountains and pristine nature",
+      "partner_galibi": "Galibi sea turtle conservation tour at night",
+      "partner_commewijne": "Commewijne River cruise with wildlife viewing",
+      "blog_cultural": "Traditional Surinamese cultural ceremony with indigenous people",
+      "blog_wildlife": "Wildlife photographer capturing exotic birds in rainforest",
+      "blog_villages": "Traditional wooden villages along Suriname River",
+      "about_resort": "Jungle Resort PingPe eco-lodge facilities",
+      "tour_detail_jungle": "Tour group exploring Surinamese rainforest with guide",
+      "tour_detail_canoe": "Traditional dugout canoe journey on river",
+      "tour_detail_wildlife": "Exotic birds and wildlife spotting in jungle",
+      "tour_detail_workshop": "Traditional village cultural workshop experience"
+    }
   }
 }

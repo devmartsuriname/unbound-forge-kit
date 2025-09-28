@@ -56,5 +56,31 @@
     "itinerary": "Dag-tot-Dag Reisschema",
     "practical_info": "Praktische Informatie",
     "max_participants": "Maximum Deelnemers"
+  },
+  "images": {
+    "alt": {
+      "hero_jungle_resort": "Authentiek jungle resort uitzicht langs de Boven-Suriname rivier",
+      "hero_waterfalls": "Ongerepte watervallen in Surinaams regenwoud",
+      "hero_village": "Traditioneel Saramaccaans dorp langs de rivier",
+      "hero_river_sunset": "Zonsondergang boven Boven-Suriname rivier met traditionele boten",
+      "hero_canopy": "Dichte regenwoud luifel in Boven-Suriname",
+      "tour_village_wildlife": "Traditionele dorp en wildlife verkenning in Suriname",
+      "tour_upper_discovery": "Boven-Suriname ontdekkingstour door ongerept regenwoud",
+      "tour_jungle_adventure": "Uitgebreide jungle avontuur expeditie",
+      "tour_rainforest_immersion": "Diepe regenwoud onderdompeling ervaring",
+      "tour_back_to_basic": "Back-to-basic jungle expeditie kampeerplaats",
+      "partner_brownsberg": "Brownsberg Natuurpark watervallen en wandelpaden",
+      "partner_raleighvallen": "Raleighvallen granieten koepelbergen en ongerepte natuur",
+      "partner_galibi": "Galibi zeeschildpad conservatie tour 's nachts",
+      "partner_commewijne": "Commewijne rivier cruise met wildlife observatie",
+      "blog_cultural": "Traditionele Surinaamse culturele ceremonie met inheemse bevolking",
+      "blog_wildlife": "Wildlife fotograaf die exotische vogels vastlegt in regenwoud",
+      "blog_villages": "Traditionele houten dorpen langs de Suriname rivier",
+      "about_resort": "Jungle Resort PingPe eco-lodge faciliteiten",
+      "tour_detail_jungle": "Tourgroep verkent Surinaams regenwoud met gids",
+      "tour_detail_canoe": "Traditionele dugout kano reis op rivier",
+      "tour_detail_wildlife": "Exotische vogels en wildlife spotten in jungle",
+      "tour_detail_workshop": "Traditionele dorp culturele workshop ervaring"
+    }
   }
 }
