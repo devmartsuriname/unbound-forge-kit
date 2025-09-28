@@ -1,111 +1,91 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useState } from "react";
 import { Rating } from 'react-simple-star-rating';
 import PriceRange from "./PriceRange";
-import DestinationForm from "./DestinationForm";
-import { selectProducts } from "../../../redux/features/productSlice";
-import shop_data from "../../../data/ShopData";
+import tours_data, { type TourData } from "../../../data/ToursData";
 
 interface FilterCriteria {
   duration: string;
-  amenities: string;
-  language: string;
+  difficulty: string;
   rating: number | null;
 }
 
 interface FeatureSidebarProps {
-  setProducts: (products: any[]) => void;
+  setTours: (tours: TourData[]) => void;
 }
 
-const FeatureSidebar = ({ setProducts }: FeatureSidebarProps) => {
- 
-  const allProducts = useSelector(selectProducts);
-  const filterdProduct = allProducts.filter(product => product.page === 'shop_3');
+const FeatureSidebar = ({ setTours }: FeatureSidebarProps) => {
+  const allTours = tours_data;
 
   const [durationSelected, setDurationSelected] = useState('');
-  const [amenitiesSelected, setAmenitiesSelected] = useState('');
-  const [languageSelected, setLanguageSelected] = useState('');
+  const [difficultySelected, setDifficultySelected] = useState('');
   const [ratingSelected, setRatingSelected] = useState<number | null>(null);
 
-  const durationFilter = filterdProduct.map(product => product.duration);
-  const amenitiesFilter = filterdProduct.map(product => product.amenities);
-  const languageFilter = filterdProduct.map(product => product.language);
+  const durationFilter = allTours.map(tour => `${tour.duration_days} Days`);
+  const difficultyFilter = allTours.map(tour => tour.difficulty_level);
 
   const allDuration = ['All Duration', ...new Set(durationFilter)];
-  const allAmenities = ['All Amenities', ...new Set(amenitiesFilter)];
-  const allLanguage = ['All Language', ...new Set(languageFilter)];
+  const allDifficulty = ['All Difficulty', ...new Set(difficultyFilter)];
 
   // Handle duration selection
   const handleDuration = (duration: string) => {
     setDurationSelected(prevDuration => prevDuration === duration ? '' : duration);
-    filterProducts({ duration: duration === durationSelected ? '' : duration, amenities: amenitiesSelected, language: languageSelected, rating: ratingSelected });
+    filterTours({ duration: duration === durationSelected ? '' : duration, difficulty: difficultySelected, rating: ratingSelected });
   };
 
-  // Handle amenities selection
-  const handleAmenities = (amenities: string) => {
-    setAmenitiesSelected(prevAmenities => prevAmenities === amenities ? '' : amenities);
-    filterProducts({ amenities: amenities === amenitiesSelected ? '' : amenities, language: languageSelected, rating: ratingSelected, duration: durationSelected });
-  };
-
-  // Handle language selection
-  const handleLanguage = (language: string) => {
-    setLanguageSelected(prevLanguage => prevLanguage === language ? '' : language);
-    filterProducts({ amenities: amenitiesSelected, language: language === languageSelected ? '' : language, rating: ratingSelected, duration: durationSelected });
+  // Handle difficulty selection
+  const handleDifficulty = (difficulty: string) => {
+    setDifficultySelected(prevDifficulty => prevDifficulty === difficulty ? '' : difficulty);
+    filterTours({ difficulty: difficulty === difficultySelected ? '' : difficulty, rating: ratingSelected, duration: durationSelected });
   };
 
   // Handle rating selection
   const handleRating = (rating: number) => {
     setRatingSelected(prevRating => prevRating === rating ? null : rating);
-    filterProducts({ amenities: amenitiesSelected, language: languageSelected, rating: rating === ratingSelected ? null : rating, duration: durationSelected });
+    filterTours({ difficulty: difficultySelected, rating: rating === ratingSelected ? null : rating, duration: durationSelected });
   };
 
-  const filterProducts = ({ duration, amenities, language, rating }: FilterCriteria) => {
-    let filteredProducts = allProducts;
+  const filterTours = ({ duration, difficulty, rating }: FilterCriteria) => {
+    let filteredTours = allTours;
 
     if (duration && duration !== 'All Duration') {
-      filteredProducts = filteredProducts.filter(product => product.duration === duration);
+      const durationDays = parseInt(duration.split(' ')[0]);
+      filteredTours = filteredTours.filter(tour => tour.duration_days === durationDays);
     }
 
-    if (amenities && amenities !== 'All Amenities') {
-      filteredProducts = filteredProducts.filter(product => product.amenities === amenities);
-    }
-
-    if (language && language !== 'All Language') {
-      filteredProducts = filteredProducts.filter(product => product.language === language);
+    if (difficulty && difficulty !== 'All Difficulty') {
+      filteredTours = filteredTours.filter(tour => tour.difficulty_level === difficulty);
     }
 
     if (rating !== null) {
-      filteredProducts = filteredProducts.filter(product => product.review === rating);
+      filteredTours = filteredTours.filter(tour => tour.review === rating);
     }
 
-    setProducts(filteredProducts);
+    setTours(filteredTours);
   };
 
 
   // handle Price
-  const maxPrice = shop_data.reduce((max, item) => {
-    return item.price > max ? item.price : max;
+  const maxPrice = tours_data.reduce((max, tour) => {
+    return tour.price_eur > max ? tour.price_eur : max;
   }, 0);
 
   const [priceValue, setPriceValue] = useState([0, maxPrice]);
 
-  useEffect(() => {
-    const filterPrice = shop_data.filter((j) => j.price >= priceValue[0] && j.price <= priceValue[1]);
-    setProducts(filterPrice);
-  }, [priceValue, setProducts]);
+  const handlePriceFilter = () => {
+    const filteredTours = allTours.filter((tour) => tour.price_eur >= priceValue[0] && tour.price_eur <= priceValue[1]);
+    setTours(filteredTours);
+  };
 
   const handleChanges = (val: number[]) => {
-    setPriceValue(val)
+    setPriceValue(val);
+    handlePriceFilter();
   }
 
   return (
     <div className="col-xl-3 col-lg-4 order-last order-lg-first">
       <div className="tg-filter-sidebar mb-40 top-sticky">
         <div className="tg-filter-item">
-
-          {/* destination */}
-          <DestinationForm />
 
           {/* price range */}
           <div className="tg-filter-price-input">
@@ -118,8 +98,8 @@ const FeatureSidebar = ({ setProducts }: FeatureSidebarProps) => {
               handleChanges={handleChanges}
             />
             <div className="d-flex align-items-center mt-15">
-              <span className="input-range" onChange={() => handleChanges}>
-                ${priceValue[0]} - ${priceValue[1]}
+              <span className="input-range">
+                €{priceValue[0]} - €{priceValue[1]}
               </span>
             </div>
           </div>
@@ -141,15 +121,15 @@ const FeatureSidebar = ({ setProducts }: FeatureSidebarProps) => {
           </div>
           <span className="tg-filter-border mt-25 mb-25"></span>
 
-          {/* amenitiess */}
-          <h4 className="tg-filter-title mb-15">Amenities</h4>
+          {/* difficulty */}
+          <h4 className="tg-filter-title mb-15">Difficulty Level</h4>
           <div className="tg-filter-list">
             <ul>
-              {allAmenities.map((amenities, i) => (
-                <li key={i} onClick={() => handleAmenities(amenities)}>
+              {allDifficulty.map((difficulty, i) => (
+                <li key={i} onClick={() => handleDifficulty(difficulty)}>
                   <div className="checkbox d-flex">
-                    <input className="tg-checkbox" type="checkbox" checked={amenities === amenitiesSelected} readOnly id={`amenities_${i}`} />
-                    <label className="tg-label" htmlFor={`amenities_${i}`} onClick={() => handleAmenities(amenities)}>{amenities}</label>
+                    <input className="tg-checkbox" type="checkbox" checked={difficulty === difficultySelected} readOnly id={`difficulty_${i}`} />
+                    <label className="tg-label" htmlFor={`difficulty_${i}`} onClick={() => handleDifficulty(difficulty)}>{difficulty}</label>
                   </div>
                 </li>
               ))}
@@ -177,20 +157,6 @@ const FeatureSidebar = ({ setProducts }: FeatureSidebarProps) => {
           </div>
           <span className="tg-filter-border mt-25 mb-25"></span>
 
-          {/* language */}
-          <h4 className="tg-filter-title mb-15">Language</h4>
-          <div className="tg-filter-list">
-            <ul>
-              {allLanguage.map((language, i) => (
-                <li key={i} onClick={() => handleLanguage(language)}>
-                  <div className="checkbox d-flex">
-                    <input className="tg-checkbox" type="checkbox" checked={language === languageSelected} readOnly id={`language_${i}`} />
-                    <label className="tg-label" htmlFor={`language_${i}`} onClick={() => handleLanguage(language)}>{language}</label>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
         </div>
       </div>
     </div>

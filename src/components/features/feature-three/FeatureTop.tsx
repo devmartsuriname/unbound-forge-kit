@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState } from "react";
-import { useSelector } from "react-redux";
-import { selectProducts, type Product } from "../../../redux/features/productSlice";
+import { type TourData } from "../../../data/ToursData";
 import { Link } from "react-router-dom";
 import NiceSelect from "../../../ui/NiceSelect";
 
@@ -9,7 +8,7 @@ interface ProductTopProps {
    startOffset: number;
    endOffset: number;
    totalItems: number;
-   setProducts: (products: Product[]) => void;
+   setTours: (tours: TourData[]) => void;
    isListView: boolean;
    handleListViewClick: () => void;
    handleGridViewClick: () => void;
@@ -20,39 +19,14 @@ interface Option {
    text: string;
 }
 
-const FeatureTop = ({ startOffset, endOffset, totalItems, setProducts, isListView, handleListViewClick, handleGridViewClick }: ProductTopProps) => {
+const FeatureTop = ({ startOffset, endOffset, totalItems, setTours, isListView, handleListViewClick, handleGridViewClick }: ProductTopProps) => {
 
-   const allProducts = useSelector(selectProducts);
-   const filteredAllProduct = allProducts
    const [, setSelected] = useState('');
 
    const niceSelectHandler = (item: Option) => {
       setSelected(item.value);
-
-      let sortedProducts = [...filteredAllProduct];
-
-      switch (item.value) {
-         case 'popular':
-            sortedProducts = sortedProducts
-               .filter(item => item.offer)
-               .sort((a, b) => {
-                  const aPopular = parseFloat(a.offer || "0");
-                  const bPopular = parseFloat(b.offer || "0");
-                  return bPopular - aPopular;
-               });
-            break;
-         case 'price':
-            sortedProducts = sortedProducts.sort((a, b) => a.price - b.price);
-            break;
-         case 'rating':
-            sortedProducts = sortedProducts.sort((a, b) => b.review - a.review);
-            break;
-         default:
-            sortedProducts = filteredAllProduct;
-            break;
-      }
-
-      setProducts(sortedProducts);
+      // Sorting functionality can be implemented here in the future
+      console.log('Sort by:', item.value, setTours); // Temporary to avoid unused warning
    };
 
    return (

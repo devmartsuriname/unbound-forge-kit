@@ -3,6 +3,7 @@ import ReviewDetails from "../feature-details-one/about/ReviewDetails"
 import ReviewFormArea from "../feature-details-one/about/ReviewFormArea"
 import FeatureList from "../feature-details-one/FeatureList"
 import FeatureSidebar from "../feature-details-one/FeatureSidebar"
+import tours_data from "../../../data/ToursData"
 import AboutSlider from "./about/AboutSlider"
 import AboutText from "./about/AboutText"
 import Amenities from "./about/Amenities"
@@ -19,7 +20,7 @@ const TourAboutDetails = () => {
                         <div className="row align-items-center">
                            <div className="col-lg-12">
                               <div className="tg-tour-details-video-feature-list tg-tour-details-video-feature-2-list">
-                                 <FeatureList />
+                                 <FeatureList tour={tours_data[0]} />
                               </div>
                            </div>
                         </div>

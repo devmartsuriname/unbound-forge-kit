@@ -1,11 +1,30 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import FeatureList from "./FeatureList"
 import VideoPopup from "../../../modals/VideoPopup";
+import tours_data from "../../../data/ToursData";
 
 const FeatureDetailsArea = () => {
-
+   const { slug } = useParams<{ slug: string }>();
    const [isVideoOpen, setIsVideoOpen] = useState(false);
+   
+   // Find the tour based on the slug
+   const tour = tours_data.find(t => t.slug === slug);
+   
+   // If no tour found, return a not found message
+   if (!tour) {
+      return (
+         <div className="tg-tour-details-area pt-35 pb-25">
+            <div className="container">
+               <div className="text-center">
+                  <h2>Tour Not Found</h2>
+                  <p>The requested tour could not be found.</p>
+                  <Link to="/tours" className="tg-btn">Back to Tours</Link>
+               </div>
+            </div>
+         </div>
+      );
+   }
 
    return (
       <>
@@ -13,20 +32,20 @@ const FeatureDetailsArea = () => {
             <div className="container">
                <div className="row align-items-end mb-35">
                   <div className="col-xl-9 col-lg-8">
-                     <div className="tg-tour-details-video-title-wrap">
-                        <h2 className="tg-tour-details-video-title mb-15">Vatican Museums Sistine Chapel Skip the Line</h2>
-                        <div className="tg-tour-details-video-location d-flex flex-wrap">
-                           <span className="mr-25"><i className="fa-regular fa-location-dot"></i> Street Bintage,Veins City, italy</span>
-                           <div className="tg-tour-details-video-ratings">
-                              <span><i className="fa-sharp fa-solid fa-star"></i></span>
-                              <span><i className="fa-sharp fa-solid fa-star"></i></span>
-                              <span><i className="fa-sharp fa-solid fa-star"></i></span>
-                              <span><i className="fa-sharp fa-solid fa-star"></i></span>
-                              <span><i className="fa-sharp fa-solid fa-star"></i></span>
-                              <span className="review">(5 Reviews)</span>
-                           </div>
-                        </div>
-                     </div>
+                      <div className="tg-tour-details-video-title-wrap">
+                         <h2 className="tg-tour-details-video-title mb-15">{tour.title_en}</h2>
+                         <div className="tg-tour-details-video-location d-flex flex-wrap">
+                            <span className="mr-25"><i className="fa-regular fa-location-dot"></i> {tour.location}</span>
+                            <div className="tg-tour-details-video-ratings">
+                               <span><i className="fa-sharp fa-solid fa-star"></i></span>
+                               <span><i className="fa-sharp fa-solid fa-star"></i></span>
+                               <span><i className="fa-sharp fa-solid fa-star"></i></span>
+                               <span><i className="fa-sharp fa-solid fa-star"></i></span>
+                               <span><i className="fa-sharp fa-solid fa-star"></i></span>
+                               <span className="review">({tour.review} Rating)</span>
+                            </div>
+                         </div>
+                      </div>
                   </div>
                   <div className="col-xl-3 col-lg-4">
                      <div className="tg-tour-details-video-share text-end">
@@ -46,52 +65,49 @@ const FeatureDetailsArea = () => {
                   </div>
                </div>
                <div className="row gx-15 mb-25">
-                  <div className="col-lg-7">
-                     <div className="tg-tour-details-video-thumb mb-15">
-                        <img className="w-100" src="/assets/img/tour-details/thumb-4.jpg" alt="" />
-                     </div>
-                  </div>
+                   <div className="col-lg-7">
+                      <div className="tg-tour-details-video-thumb mb-15">
+                         <img className="w-100" src={tour.featured_image} alt={tour.title_en} />
+                      </div>
+                   </div>
                   <div className="col-lg-5">
                      <div className="row  gx-15">
-                        <div className="col-12">
-                           <div className="tg-tour-details-video-thumb p-relative mb-15">
-                              <img className="w-100" src="/assets/img/tour-details/thumb-1.jpg" alt="" />
-                              <div className="tg-tour-details-video-inner text-center">
-                                 <a onClick={() => setIsVideoOpen(true)} style={{ cursor: "pointer" }} className="tg-video-play popup-video tg-pulse-border">
-                                    <span className="p-relative z-index-11">
-                                       <svg width="19" height="21" viewBox="0 0 19 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                          <path d="M17.3616 8.34455C19.0412 9.31425 19.0412 11.7385 17.3616 12.7082L4.13504 20.3445C2.45548 21.3142 0.356021 20.1021 0.356021 18.1627L0.356022 2.89C0.356022 0.950609 2.45548 -0.261512 4.13504 0.708185L17.3616 8.34455Z" fill="currentColor" />
-                                       </svg>
-                                    </span>
-                                 </a>
-                              </div>
-                           </div>
-                        </div>
-                        <div className="col-lg-6 col-md-6">
-                           <div className="tg-tour-details-video-thumb mb-15">
-                              <img className="w-100" src="/assets/img/tour-details/thumb-2.jpg" alt="" />
-                           </div>
-                        </div>
-                        <div className="col-lg-6 col-md-6">
-                           <div className="tg-tour-details-video-thumb mb-15">
-                              <img className="w-100" src="/assets/img/tour-details/thumb-3.jpg" alt="" />
-                           </div>
-                        </div>
+                         <div className="col-12">
+                            <div className="tg-tour-details-video-thumb p-relative mb-15">
+                               <img className="w-100" src={tour.gallery_images[0] || tour.featured_image} alt={tour.title_en} />
+                               <div className="tg-tour-details-video-inner text-center">
+                                  <a onClick={() => setIsVideoOpen(true)} style={{ cursor: "pointer" }} className="tg-video-play popup-video tg-pulse-border">
+                                     <span className="p-relative z-index-11">
+                                        <svg width="19" height="21" viewBox="0 0 19 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                           <path d="M17.3616 8.34455C19.0412 9.31425 19.0412 11.7385 17.3616 12.7082L4.13504 20.3445C2.45548 21.3142 0.356021 20.1021 0.356021 18.1627L0.356022 2.89C0.356022 0.950609 2.45548 -0.261512 4.13504 0.708185L17.3616 8.34455Z" fill="currentColor" />
+                                        </svg>
+                                     </span>
+                                  </a>
+                               </div>
+                            </div>
+                         </div>
+                         {tour.gallery_images.slice(1, 3).map((image, index) => (
+                            <div key={index} className="col-lg-6 col-md-6">
+                               <div className="tg-tour-details-video-thumb mb-15">
+                                  <img className="w-100" src={image} alt={`${tour.title_en} gallery ${index + 2}`} />
+                               </div>
+                            </div>
+                         ))}
                      </div>
                   </div>
                </div>
                <div className="tg-tour-details-feature-list-wrap">
                   <div className="row align-items-center">
-                     <div className="col-lg-8">
-                        <div className="tg-tour-details-video-feature-list">
-                           <FeatureList />
-                        </div>
-                     </div>
-                     <div className="col-lg-4">
-                        <div className="tg-tour-details-video-feature-price mb-15">
-                           <p>From <span>$59.00</span> / Person</p>
-                        </div>
-                     </div>
+                      <div className="col-lg-8">
+                         <div className="tg-tour-details-video-feature-list">
+                            <FeatureList tour={tour} />
+                         </div>
+                      </div>
+                      <div className="col-lg-4">
+                         <div className="tg-tour-details-video-feature-price mb-15">
+                            <p>From <span>€{tour.price_eur}</span> / Person</p>
+                         </div>
+                      </div>
                   </div>
                </div>
             </div>
