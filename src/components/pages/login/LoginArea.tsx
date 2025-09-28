@@ -1,7 +1,13 @@
 import { useState } from 'react';
 import LoginForm from "../../forms/LoginForm";
 
-const LoginArea = () => {
+interface LoginAreaProps {
+  compact?: boolean;
+  hideHeading?: boolean;
+  noAreaWrapper?: boolean; // reserved for future use
+}
+
+const LoginArea = ({ compact = false, hideHeading = false }: LoginAreaProps) => {
    const [isSignUp, setIsSignUp] = useState(false);
 
    const toggleMode = () => {
@@ -13,11 +19,13 @@ const LoginArea = () => {
          <div className="container">
             <div className="row justify-content-center">
                <div className="col-xl-6 col-lg-8 col-md-10">
-                  <div className="tg-login-wrapper">
-                     <div className="tg-login-top text-center mb-30">
-                        <h2>{isSignUp ? 'Create Account' : 'Sign in to your account'}</h2>
-                        <p>{isSignUp ? 'Enter your information to create a new account' : 'Enter your credentials to access your account.'}</p>
-                     </div>
+                  <div className={`tg-login-wrapper${compact ? ' compact' : ''}`}>
+                     {!hideHeading && (
+                        <div className="tg-login-top text-center mb-30">
+                           <h2>{isSignUp ? 'Create Account' : 'Sign in to your account'}</h2>
+                           <p>{isSignUp ? 'Enter your information to create a new account' : 'Enter your credentials to access your account.'}</p>
+                        </div>
+                     )}
                      <div className="tg-login-form">
                         <div className="tg-tour-about-review-form">
                            <LoginForm onToggleMode={toggleMode} isSignUp={isSignUp} />

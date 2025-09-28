@@ -39,7 +39,7 @@ export default function AuthPage() {
                     <h2>Admin Portal</h2>
                     <p>Sign in to access the admin dashboard</p>
                   </div>
-                  <LoginArea />
+                  <LoginArea compact hideHeading />
                 </div>
               </div>
             </div>
