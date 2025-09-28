@@ -1,0 +1,68 @@
+/* Admin Theme Integration with Tourex Design System */
+
+/* Theme Toggle for Admin Portal */
+.admin-theme-toggle {
+  background: var(--tg-common-white);
+  border: 1px solid var(--tg-border-1);
+  color: var(--tg-common-black);
+  transition: all 0.3s ease;
+}
+
+.admin-theme-toggle:hover {
+  background: var(--tg-grey-5);
+  border-color: var(--tg-theme-primary);
+}
+
+/* Dark mode overrides for admin */
+.dark .admin-theme-toggle {
+  background: var(--tg-grey-1);
+  border-color: var(--tg-border-2);
+  color: var(--tg-common-white);
+}
+
+.dark .admin-theme-toggle:hover {
+  background: var(--tg-grey-2);
+  border-color: var(--tg-theme-primary);
+}
+
+/* Admin layout dark mode integration */
+.dark .tg-login-area {
+  background: var(--tg-grey-1) !important;
+}
+
+.dark .tg-login-wrapper {
+  background: var(--tg-grey-2) !important;
+  border-color: var(--tg-border-2) !important;
+}
+
+.dark .tg-login-top h2 {
+  color: var(--tg-common-white) !important;
+}
+
+.dark .tg-login-top p {
+  color: var(--tg-grey-4) !important;
+}
+
+/* Ensure admin components use Tourex colors */
+.admin-portal .input {
+  background: var(--tg-common-white);
+  border-color: var(--tg-border-1);
+  color: var(--tg-common-black);
+}
+
+.dark .admin-portal .input {
+  background: var(--tg-grey-2);
+  border-color: var(--tg-border-2);
+  color: var(--tg-common-white);
+}
+
+.admin-portal .tg-btn {
+  background: var(--tg-theme-primary);
+  border-color: var(--tg-theme-primary);
+  color: var(--tg-common-white);
+}
+
+.admin-portal .tg-btn:hover {
+  background: var(--tg-theme-secondary);
+  border-color: var(--tg-theme-secondary);
+}

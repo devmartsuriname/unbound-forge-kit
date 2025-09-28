@@ -46,7 +46,7 @@ export function ThemeToggle() {
       variant="ghost"
       size="sm"
       onClick={cycleTheme}
-      className="gap-2"
+      className="gap-2 admin-theme-toggle"
       aria-label={getLabel()}
     >
       {getIcon()}

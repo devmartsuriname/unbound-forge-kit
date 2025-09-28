@@ -7,3 +7,6 @@
 @import "/assets/css/default.css";
 @import "/assets/css/flatpicker.css";
 @import "/assets/css/fontawesome-all.min.css";
+
+/* Admin Theme Integration */
+@import "./admin-theme.css";
