@@ -42,9 +42,12 @@
         }
     }
     &-thumb{
-        margin-right: 0;
+        margin-right: -143px;
         position: relative;
         z-index: 1;
+        @media #{$md,$sm,$xs} {
+            margin-right: 0;
+        }
         @media #{$sm,$xs} {
             margin-bottom: 20px;
         }

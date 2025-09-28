@@ -7,21 +7,24 @@
     &-thumb{
         &-wrap{
             & img{
-                width: 100%;
-                border-radius: 15px;
-                margin-bottom: 30px;
                 @media #{$md,$sm,$xs} {
                    margin-bottom: 30px;
+                   width: 100%;
                 }
             }
         }
         &-2{
-            width: 100%;
-            margin: 0;
+            float: right;
+            margin-right: -15px;
+            @media #{$lg,$md,$sm,$xs} {
+                margin: 0;
+            }
         }
         &-4{
-            width: 100%;
-            margin: 0;
+            margin-left: -15px;
+            @media #{$lg,$md,$sm,$xs} {
+                margin: 0;
+            }
         }
     }
     &-content{
