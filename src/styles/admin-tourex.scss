@@ -1,0 +1,438 @@
+/* Admin Tourex Theme Integration */
+@use '../../../public/assets/scss/utils' as *;
+
+/* Admin Layout Base */
+.tg-admin-layout {
+    min-height: 100vh;
+    background: var(--tg-grey-5);
+    font-family: var(--tg-ff-body);
+}
+
+/* Admin Sidebar */
+.tg-admin-sidebar {
+    background: var(--tg-common-white);
+    border-right: 1px solid var(--tg-border-1);
+    @include box-shadow(0px 4px 20px rgba(0, 0, 0, 0.08));
+    
+    &.collapsed {
+        width: 80px;
+    }
+    
+    &.expanded {
+        width: 280px;
+    }
+}
+
+.tg-admin-sidebar-header {
+    padding: 24px;
+    border-bottom: 1px solid var(--tg-border-1);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    
+    .logo {
+        width: 40px;
+        height: 40px;
+        background: var(--tg-theme-primary);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--tg-common-white);
+        font-weight: 600;
+        font-size: 16px;
+    }
+    
+    .brand-info {
+        h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--tg-common-black);
+            margin: 0;
+            line-height: 1.2;
+        }
+        
+        p {
+            font-size: 12px;
+            color: var(--tg-grey-4);
+            margin: 0;
+            line-height: 1.2;
+        }
+    }
+}
+
+.tg-admin-nav {
+    padding: 16px;
+    
+    .nav-section {
+        margin-bottom: 32px;
+        
+        .section-label {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--tg-grey-4);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            padding: 0 12px;
+        }
+        
+        .nav-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            
+            .nav-item {
+                margin-bottom: 4px;
+                
+                .nav-link {
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                    padding: 12px;
+                    border-radius: 8px;
+                    color: var(--tg-grey-2);
+                    text-decoration: none;
+                    font-size: 14px;
+                    font-weight: 500;
+                    @include tg-transition();
+                    
+                    .nav-icon {
+                        width: 20px;
+                        height: 20px;
+                        flex-shrink: 0;
+                    }
+                    
+                    &:hover {
+                        background: var(--tg-grey-8);
+                        color: var(--tg-theme-primary);
+                    }
+                    
+                    &.active {
+                        background: rgba(86, 12, 227, 0.1);
+                        color: var(--tg-theme-primary);
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Admin Header */
+.tg-admin-header {
+    background: var(--tg-common-white);
+    border-bottom: 1px solid var(--tg-border-1);
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    justify-content: space-between;
+    @include box-shadow(0px 2px 8px rgba(0, 0, 0, 0.04));
+    
+    .header-left {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+    
+    .header-right {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: var(--tg-grey-2);
+            
+            .user-icon {
+                width: 16px;
+                height: 16px;
+            }
+        }
+    }
+}
+
+.tg-sidebar-toggle {
+    background: none;
+    border: none;
+    padding: 8px;
+    border-radius: 6px;
+    color: var(--tg-grey-2);
+    cursor: pointer;
+    @include tg-transition();
+    
+    &:hover {
+        background: var(--tg-grey-8);
+        color: var(--tg-theme-primary);
+    }
+}
+
+/* Admin Cards */
+.tg-admin-card {
+    background: var(--tg-common-white);
+    border-radius: 12px;
+    @include box-shadow(0px 4px 20px rgba(0, 0, 0, 0.06));
+    border: 1px solid var(--tg-border-3);
+    overflow: hidden;
+    
+    .card-header {
+        padding: 20px 24px 16px;
+        border-bottom: 1px solid var(--tg-border-3);
+        
+        &.stat-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 24px;
+            border-bottom: none;
+            
+            .stat-title {
+                font-size: 14px;
+                font-weight: 500;
+                color: var(--tg-grey-4);
+                margin: 0;
+            }
+            
+            .stat-icon {
+                width: 40px;
+                height: 40px;
+                border-radius: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: rgba(86, 12, 227, 0.1);
+                color: var(--tg-theme-primary);
+            }
+        }
+        
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--tg-common-black);
+            margin: 0 0 4px 0;
+        }
+        
+        p {
+            font-size: 14px;
+            color: var(--tg-grey-4);
+            margin: 0;
+        }
+    }
+    
+    .card-content {
+        padding: 24px;
+        
+        &.stat-content {
+            padding: 0 24px 20px;
+            
+            .stat-value {
+                font-size: 32px;
+                font-weight: 700;
+                color: var(--tg-common-black);
+                margin: 0 0 4px 0;
+                line-height: 1;
+            }
+            
+            .stat-description {
+                font-size: 13px;
+                color: var(--tg-grey-4);
+                margin: 0;
+            }
+        }
+    }
+}
+
+/* Quick Actions */
+.tg-quick-actions {
+    .action-item {
+        display: block;
+        padding: 16px;
+        border-radius: 8px;
+        border: 1px solid var(--tg-border-3);
+        text-decoration: none;
+        margin-bottom: 12px;
+        @include tg-transition();
+        
+        &:hover {
+            border-color: var(--tg-theme-primary);
+            background: rgba(86, 12, 227, 0.02);
+            @include transform(translateY(-1px));
+        }
+        
+        .action-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--tg-common-black);
+            margin: 0 0 4px 0;
+        }
+        
+        .action-description {
+            font-size: 12px;
+            color: var(--tg-grey-4);
+            margin: 0;
+        }
+    }
+}
+
+/* Buttons */
+.tg-admin-btn {
+    @extend .tg-btn;
+    font-size: 14px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 500;
+    
+    &.btn-sm {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+}
+
+/* Dark Mode */
+.dark {
+    .tg-admin-layout {
+        background: var(--tg-grey-1);
+    }
+    
+    .tg-admin-sidebar {
+        background: var(--tg-grey-2);
+        border-color: var(--tg-border-2);
+    }
+    
+    .tg-admin-header {
+        background: var(--tg-grey-2);
+        border-color: var(--tg-border-2);
+    }
+    
+    .tg-admin-card {
+        background: var(--tg-grey-2);
+        border-color: var(--tg-border-2);
+        
+        .card-header {
+            border-color: var(--tg-border-2);
+            
+            h3 {
+                color: var(--tg-common-white);
+            }
+            
+            .stat-title {
+                color: var(--tg-grey-4);
+            }
+        }
+        
+        .card-content {
+            .stat-value {
+                color: var(--tg-common-white);
+            }
+        }
+    }
+    
+    .tg-admin-sidebar-header {
+        border-color: var(--tg-border-2);
+        
+        .brand-info h4 {
+            color: var(--tg-common-white);
+        }
+    }
+    
+    .tg-admin-nav .nav-section .nav-list .nav-item .nav-link {
+        color: var(--tg-grey-4);
+        
+        &:hover {
+            background: var(--tg-grey-1);
+            color: var(--tg-theme-primary);
+        }
+        
+        &.active {
+            background: rgba(86, 12, 227, 0.15);
+            color: var(--tg-theme-primary);
+        }
+    }
+    
+    .tg-quick-actions .action-item {
+        border-color: var(--tg-border-2);
+        background: var(--tg-grey-2);
+        
+        &:hover {
+            border-color: var(--tg-theme-primary);
+            background: rgba(86, 12, 227, 0.1);
+        }
+        
+        .action-title {
+            color: var(--tg-common-white);
+        }
+    }
+}
+
+/* Responsive */
+@media #{$lg} {
+    .tg-admin-sidebar {
+        &.expanded {
+            width: 260px;
+        }
+    }
+}
+
+@media #{$md} {
+    .tg-admin-header {
+        padding: 0 16px;
+    }
+    
+    .tg-admin-card .card-content {
+        padding: 20px;
+        
+        &.stat-content {
+            padding: 0 20px 16px;
+        }
+    }
+}
+
+@media #{$sm} {
+    .tg-admin-sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        z-index: 1000;
+        @include transform(translateX(-100%));
+        @include tg-transition();
+        
+        &.open {
+            @include transform(translateX(0));
+        }
+    }
+    
+    .tg-admin-header {
+        padding: 0 12px;
+        
+        .user-info span {
+            display: none;
+        }
+    }
+}
+
+@media #{$xs} {
+    .tg-admin-card .card-header {
+        padding: 16px 20px 12px;
+        
+        &.stat-header {
+            padding: 16px 20px;
+        }
+    }
+    
+    .tg-admin-card .card-content {
+        padding: 16px 20px;
+        
+        &.stat-content {
+            padding: 0 20px 16px;
+            
+            .stat-value {
+                font-size: 28px;
+            }
+        }
+    }
+}

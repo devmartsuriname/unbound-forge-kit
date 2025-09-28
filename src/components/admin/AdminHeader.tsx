@@ -2,7 +2,7 @@ import { useAuth } from '../../contexts/AuthContext';
 import { Button } from '../ui/button';
 import { SidebarTrigger } from '../ui/sidebar';
 import { ThemeToggle } from '../ui/theme-toggle';
-import { LogOut, User } from 'lucide-react';
+import { LogOut, User, Menu } from 'lucide-react';
 
 export function AdminHeader() {
   const { user, signOut } = useAuth();
@@ -12,32 +12,38 @@ export function AdminHeader() {
   };
 
   return (
-    <header className="sticky top-0 z-40 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="flex h-14 items-center gap-4 px-6">
-        <SidebarTrigger className="-ml-1" />
+    <header className="tg-admin-header">
+      <div className="header-left">
+        <SidebarTrigger className="tg-sidebar-toggle">
+          <Menu size={20} />
+        </SidebarTrigger>
+      </div>
+      
+      <div className="header-right">
+        <ThemeToggle />
         
-        <div className="flex-1" />
-        
-        <div className="flex items-center gap-2">
-          <ThemeToggle />
-          
-          <div className="flex items-center gap-2 text-sm">
-            <User className="h-4 w-4" />
-            <span className="hidden sm:inline-block">
-              {user?.email}
-            </span>
-          </div>
-          
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={handleSignOut}
-            className="gap-2"
-          >
-            <LogOut className="h-4 w-4" />
-            <span className="hidden sm:inline-block">Sign Out</span>
-          </Button>
+        <div className="user-info">
+          <User className="user-icon" />
+          <span className="hidden sm:inline-block">
+            {user?.email}
+          </span>
         </div>
+        
+        <Button
+          variant="ghost"
+          size="sm"
+          onClick={handleSignOut}
+          className="tg-admin-btn btn-sm gap-2"
+          style={{
+            background: 'none',
+            border: '1px solid var(--tg-border-1)',
+            color: 'var(--tg-grey-2)',
+            padding: '8px 12px'
+          }}
+        >
+          <LogOut size={16} />
+          <span className="hidden sm:inline-block">Sign Out</span>
+        </Button>
       </div>
     </header>
   );

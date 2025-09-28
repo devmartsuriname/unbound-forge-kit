@@ -15,12 +15,6 @@ import {
 import {
   Sidebar,
   SidebarContent,
-  SidebarGroup,
-  SidebarGroupContent,
-  SidebarGroupLabel,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
   SidebarHeader,
   SidebarFooter,
   useSidebar,
@@ -78,52 +72,53 @@ export function AdminSidebar() {
   };
 
   return (
-    <Sidebar className="border-r">
-      <SidebarHeader className="border-b px-6 py-4">
-        <div className="flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground text-sm font-bold">
-            P
-          </div>
-          {!collapsed && (
-            <div>
-              <p className="text-sm font-semibold">PingPe Admin</p>
-              <p className="text-xs text-muted-foreground">Jungle Resort</p>
-            </div>
-          )}
+    <Sidebar className={`tg-admin-sidebar ${collapsed ? 'collapsed' : 'expanded'}`}>
+      <SidebarHeader className="tg-admin-sidebar-header">
+        <div className="logo">
+          P
         </div>
+        {!collapsed && (
+          <div className="brand-info">
+            <h4>PingPe Admin</h4>
+            <p>Jungle Resort</p>
+          </div>
+        )}
       </SidebarHeader>
 
       <SidebarContent>
-        {navigationItems.map((section) => (
-          <SidebarGroup key={section.title}>
-            <SidebarGroupLabel>{section.title}</SidebarGroupLabel>
-            <SidebarGroupContent>
-              <SidebarMenu>
+        <div className="tg-admin-nav">
+          {navigationItems.map((section) => (
+            <div key={section.title} className="nav-section">
+              {!collapsed && (
+                <div className="section-label">{section.title}</div>
+              )}
+              <ul className="nav-list">
                 {section.items.map((item) => (
-                  <SidebarMenuItem key={item.title}>
-                    <SidebarMenuButton asChild isActive={isActive(item.url)}>
-                      <NavLink 
-                        to={item.url} 
-                        className={({ isActive }) => 
-                          isActive 
-                            ? "bg-accent text-accent-foreground font-medium" 
-                            : "hover:bg-accent/50"
-                        }
-                      >
-                        <item.icon className="h-4 w-4" />
-                        {!collapsed && <span>{item.title}</span>}
-                      </NavLink>
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
+                  <li key={item.title} className="nav-item">
+                    <NavLink 
+                      to={item.url} 
+                      className={({ isActive: navActive }) => 
+                        `nav-link ${isActive(item.url) || navActive ? 'active' : ''}`
+                      }
+                    >
+                      <item.icon className="nav-icon" />
+                      {!collapsed && <span>{item.title}</span>}
+                    </NavLink>
+                  </li>
                 ))}
-              </SidebarMenu>
-            </SidebarGroupContent>
-          </SidebarGroup>
-        ))}
+              </ul>
+            </div>
+          ))}
+        </div>
       </SidebarContent>
 
-      <SidebarFooter className="border-t p-4">
-        <div className="text-xs text-muted-foreground text-center">
+      <SidebarFooter style={{ padding: '16px', borderTop: '1px solid var(--tg-border-1)' }}>
+        <div style={{ 
+          fontSize: '11px', 
+          color: 'var(--tg-grey-4)', 
+          textAlign: 'center',
+          fontWeight: '500'
+        }}>
           {!collapsed && 'PingPe Admin v1.0'}
         </div>
       </SidebarFooter>

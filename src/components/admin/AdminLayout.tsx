@@ -39,14 +39,12 @@ export function AdminLayout() {
 
   return (
     <SidebarProvider>
-      <div className="min-h-screen flex w-full bg-background">
+      <div className="tg-admin-layout flex w-full">
         <AdminSidebar />
-        <SidebarInset>
+        <SidebarInset style={{ flex: '1', display: 'flex', flexDirection: 'column' }}>
           <AdminHeader />
-          <main className="flex-1 overflow-auto">
-            <div className="container mx-auto p-6">
-              <Outlet />
-            </div>
+          <main style={{ flex: '1', overflow: 'auto', padding: '24px' }}>
+            <Outlet />
           </main>
         </SidebarInset>
       </div>
