@@ -5,12 +5,6 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { supabase } from '../../integrations/supabase/client';
 import { useRef } from 'react';
 
-interface ContactFormData {
-   user_name: string;
-   user_email: string;
-   web?: string;
-   message: string;
-}
 
 const schema = yup.object().shape({
    user_name: yup.string().required().label("Name"),
