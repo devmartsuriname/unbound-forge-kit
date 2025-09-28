@@ -92,6 +92,42 @@
     "practical_info": "Praktische Informatie",
     "max_participants": "Maximum Deelnemers"
   },
+  "faq": {
+    "categories": {
+      "preparation": "Voorbereiding van de tour",
+      "booking": "Boeken & Betaling",
+      "experience": "Tijdens uw tour",
+      "logistics": "Gezondheid & Veiligheid"
+    },
+    "questions": {
+      "best_time_visit": "Wanneer is de beste tijd om te bezoeken?",
+      "physical_requirements": "Wat zijn de fysieke vereisten?",
+      "bring_jungle": "Wat moet ik meenemen naar de jungle?",
+      "group_size": "Wat is de maximale groepsgrootte?",
+      "booking_process": "Hoe werkt het boekingsproces?",
+      "payment_options": "Welke betalingsopties zijn beschikbaar?",
+      "cancellation_policy": "Wat is het annuleringsbeleid?",
+      "deposit_required": "Hoeveel aanbetaling is vereist?",
+      "meals_provided": "Zijn maaltijden inbegrepen?",
+      "cultural_experience": "Welke culturele ervaringen zijn inbegrepen?",
+      "safety_measures": "Welke veiligheidsmaatregelen zijn er?",
+      "medical_facilities": "Zijn er medische faciliteiten beschikbaar?"
+    },
+    "answers": {
+      "best_time_visit": "Het droge seizoen (augustus-november) is ideaal voor jungle-expedities. Het regenseizoen biedt unieke ervaringen zoals zwemmogelijkheden bij watervallen.",
+      "physical_requirements": "Gemiddelde conditie is vereist. Tours omvatten wandelen in tropisch klimaat. Wij passen routes aan verschillende conditieniveaus aan.",
+      "bring_jungle": "Wij verstrekken een uitgebreide paklijst bij boeking. Essentiële items: muggenspray, sneldrogende kleding, stevig schoeisel en regenbescherming.",
+      "group_size": "Maximaal 8 personen per groep voor optimale ervaring en minimale impact op natuur en lokale gemeenschappen.",
+      "booking_process": "Boek online of via WhatsApp. Bevestiging binnen 24 uur. Volledige betaling 30 dagen voor vertrek. Groepsboekingen krijgen speciale tarieven.",
+      "payment_options": "Wij accepteren bankoverschrijving, creditcard en PayPal. Aanbetaling van 30% vereist bij boeking, restbedrag 30 dagen voor vertrek.",
+      "cancellation_policy": "Gratis annulering tot 30 dagen voor vertrek. 50% restitutie tussen 30-14 dagen. Geen restitutie binnen 14 dagen behalve bij overmacht.",
+      "deposit_required": "30% aanbetaling vereist om uw boeking te bevestigen. Het restbedrag is verschuldigd 30 dagen voor vertrekdatum.",
+      "meals_provided": "Alle maaltijden zijn inbegrepen tijdens meerdaagse tours. Traditionele Surinaamse gerechten plus vegetarische opties. Speciale diëten op aanvraag.",
+      "cultural_experience": "Bezoeken aan traditionele dorpen, culturele workshops, kennismaking met lokale ambachten en verhalen van inheemse gidsen over hun leefwijze.",
+      "safety_measures": "Gecertificeerde gidsen, satellietcommunicatie, EHBO-uitrusting, noodprotocollen en lokale contacten. Alle veiligheidsstandaarden worden strikt gevolgd.",
+      "medical_facilities": "Basis medische voorzieningen in hoofdkamp. Voor noodgevallen hebben wij satellietcommunicatie en evacuatieprocedures. Reisverzekering verplicht."
+    }
+  },
   "images": {
     "alt": {
       "hero_jungle_resort": "Authentiek jungle resort uitzicht langs de Boven-Suriname rivier",

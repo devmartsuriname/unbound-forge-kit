@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import Button from "../../common/Button";
 
 const AboutArea = () => {
+   const { t } = useTranslation();
+   
    return (
       <div className="tg-about-area p-relative z-index-1 pt-140 pb-105">
          <img className="tg-about-details-shape p-absolute d-none d-lg-block" src="/assets/img/about/details/shape.png" alt="shape" />
@@ -32,15 +35,12 @@ const AboutArea = () => {
                <div className="col-lg-6">
                   <div className="tg-chose-content mb-35 ml-60">
                       <div className="tg-chose-section-title mb-30">
-                         <h5 className="tg-section-subtitle mb-15 wow fadeInUp" data-wow-delay=".3s" data-wow-duration=".1s">Discover authentic Suriname</h5>
-                         <h2 className="mb-15 text-capitalize wow fadeInUp" data-wow-delay=".4s" data-wow-duration=".9s">Experience the untouched<br /> rainforest with<br /> Jungle Resort PingPe</h2>
-                         <p className="wow fadeInUp mb-35" data-wow-delay=".5s" data-wow-duration=".9s">We are dedicated to providing authentic eco-tourism experiences that connect 
-                            you with Suriname's pristine rainforest while supporting local communities. 
-                            Our expert guides, deep local knowledge, and commitment to sustainable tourism<br />
-                            ensure unforgettable adventures that respect both nature and culture.</p>
+                         <h5 className="tg-section-subtitle mb-15 wow fadeInUp" data-wow-delay=".3s" data-wow-duration=".1s">{t('about.subtitle')}</h5>
+                         <h2 className="mb-15 text-capitalize wow fadeInUp" data-wow-delay=".4s" data-wow-duration=".9s">{t('about.title')}</h2>
+                         <p className="wow fadeInUp mb-35" data-wow-delay=".5s" data-wow-duration=".9s">{t('about.description')}</p>
                          <div className="tg-chose-btn wow fadeInUp" data-wow-delay=".8s" data-wow-duration=".9s">
-                            <Link to="/tour-details" className="tg-btn tg-btn-switch-animation">
-                               <Button text="Explore Our Tours" />
+                            <Link to="/tours" className="tg-btn tg-btn-switch-animation">
+                               <Button text={t('about.cta')} />
                             </Link>
                          </div>
                       </div>
