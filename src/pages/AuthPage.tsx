@@ -29,22 +29,20 @@ export default function AuthPage() {
   // Clean admin auth layout - no public header/footer
   if (isAdminAuth) {
     return (
-      <div className="tg-login-area" style={{ 
+      <div className="tg-login-area admin-auth" style={{ 
         minHeight: '100vh', 
         background: 'var(--tg-grey-5)', 
         display: 'flex', 
-        flexDirection: 'column', 
-        justifyContent: 'center',
-        paddingTop: '120px',
-        paddingBottom: '120px'
+        alignItems: 'center',
+        padding: '40px 20px'
       }}>
         <div className="container">
           <div className="row justify-content-center">
-            <div className="col-xl-6 col-lg-8 col-md-10">
+            <div className="col-xl-5 col-lg-6 col-md-8 col-sm-10">
               <div className="tg-login-wrapper admin-portal">
-                <div className="tg-login-top text-center mb-4">
-                  <h2 style={{ color: 'var(--tg-common-black)' }}>Admin Portal</h2>
-                  <p style={{ color: 'var(--tg-grey-4)' }}>Sign in to access the admin dashboard</p>
+                <div className="tg-login-top text-center mb-30">
+                  <h2>Admin Portal</h2>
+                  <p>Sign in to access the admin dashboard</p>
                 </div>
                 <LoginArea />
               </div>

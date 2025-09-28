@@ -78,85 +78,101 @@ const LoginForm: React.FC<LoginFormProps> = ({ onToggleMode, isSignUp = false })
       }
    };
 
-   return (
-      <form onSubmit={handleSubmit}>
-         <div className="row">
-            {isSignUp && (
-               <>
-                  <div className="col-md-6 mb-25">
-                     <input 
-                        className="input" 
-                        type="text" 
-                        placeholder="First Name"
-                        value={firstName}
-                        onChange={(e) => setFirstName(e.target.value)}
-                     />
-                  </div>
-                  <div className="col-md-6 mb-25">
-                     <input 
-                        className="input" 
-                        type="text" 
-                        placeholder="Last Name"
-                        value={lastName}
-                        onChange={(e) => setLastName(e.target.value)}
-                     />
-                  </div>
-               </>
-            )}
-            <div className="col-lg-12 mb-25">
-               <input 
-                  className="input" 
-                  type="email" 
-                  placeholder="E-mail"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-               />
-            </div>
-            <div className="col-lg-12 mb-25">
-               <input 
-                  className="input" 
-                  type="password" 
-                  placeholder="Password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-               />
-            </div>
-            <div className="col-lg-12">
-               <div className="d-flex align-items-center justify-content-between">
-                  <div className="review-checkbox d-flex align-items-center mb-25">
-                     <input 
-                        className="tg-checkbox" 
-                        type="checkbox" 
-                        id="rememberMe"
-                        checked={rememberMe}
-                        onChange={(e) => setRememberMe(e.target.checked)}
-                     />
-                     <label htmlFor="rememberMe" className="tg-label">Remember me</label>
-                  </div>
-                  <div className="tg-login-navigate mb-25">
-                     <button 
-                        type="button"
-                        onClick={onToggleMode}
-                        className="text-decoration-underline border-0 bg-transparent"
-                        style={{ fontSize: '15px', textTransform: 'capitalize', color: 'var(--tg-common-black)' }}
-                     >
-                        {isSignUp ? 'Already have an account?' : "Don't have an account?"}
-                     </button>
-                  </div>
-               </div>
-               <button 
-                  type="submit" 
-                  className="tg-btn w-100"
-                  disabled={loading}
-               >
-                  {loading ? 'Please wait...' : (isSignUp ? 'Sign Up' : 'Sign In')}
-               </button>
-            </div>
-         </div>
-      </form>
-   )
+    return (
+       <form onSubmit={handleSubmit} className="tg-form">
+          <div className="row gx-15 gy-0">
+             {isSignUp && (
+                <>
+                   <div className="col-12 col-sm-6">
+                      <div className="tg-form-field mb-25">
+                         <input 
+                            className="input" 
+                            type="text" 
+                            placeholder="First Name"
+                            value={firstName}
+                            onChange={(e) => setFirstName(e.target.value)}
+                            style={{ minHeight: '44px' }}
+                            required
+                         />
+                      </div>
+                   </div>
+                   <div className="col-12 col-sm-6">
+                      <div className="tg-form-field mb-25">
+                         <input 
+                            className="input" 
+                            type="text" 
+                            placeholder="Last Name"
+                            value={lastName}
+                            onChange={(e) => setLastName(e.target.value)}
+                            style={{ minHeight: '44px' }}
+                            required
+                         />
+                      </div>
+                   </div>
+                </>
+             )}
+             <div className="col-12">
+                <div className="tg-form-field mb-25">
+                   <input 
+                      className="input" 
+                      type="email" 
+                      placeholder="E-mail"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      style={{ minHeight: '44px' }}
+                      required
+                   />
+                </div>
+             </div>
+             <div className="col-12">
+                <div className="tg-form-field mb-25">
+                   <input 
+                      className="input" 
+                      type="password" 
+                      placeholder="Password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      style={{ minHeight: '44px' }}
+                      required
+                   />
+                </div>
+             </div>
+             <div className="col-12">
+                <div className="tg-form-actions">
+                   <div className="d-flex align-items-center justify-content-between flex-wrap mb-25">
+                      <div className="review-checkbox d-flex align-items-center">
+                         <input 
+                            className="tg-checkbox" 
+                            type="checkbox" 
+                            id="rememberMe"
+                            checked={rememberMe}
+                            onChange={(e) => setRememberMe(e.target.checked)}
+                         />
+                         <label htmlFor="rememberMe" className="tg-label">Remember me</label>
+                      </div>
+                      <div className="tg-login-navigate">
+                         <button 
+                            type="button"
+                            onClick={onToggleMode}
+                            className="btn-link"
+                         >
+                            {isSignUp ? 'Already have an account?' : "Don't have an account?"}
+                         </button>
+                      </div>
+                   </div>
+                   <button 
+                      type="submit" 
+                      className="tg-btn w-100"
+                      style={{ minHeight: '48px' }}
+                      disabled={loading}
+                   >
+                      {loading ? 'Please wait...' : (isSignUp ? 'Sign Up' : 'Sign In')}
+                   </button>
+                </div>
+             </div>
+          </div>
+       </form>
+    )
 }
 
 export default LoginForm

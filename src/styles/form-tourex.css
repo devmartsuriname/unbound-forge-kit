@@ -1,0 +1,194 @@
+/* Form Enhancement for Tourex Theme */
+
+/* Tourex Form Wrapper */
+.tg-form {
+    width: 100%;
+}
+
+.tg-form-field {
+    width: 100%;
+    
+    .input {
+        width: 100%;
+        min-height: 50px;
+        padding: 14px 20px;
+        border: 1px solid var(--tg-border-1);
+        border-radius: 8px;
+        font-size: 14px;
+        color: var(--tg-common-black);
+        background: var(--tg-common-white);
+        transition: all 0.3s ease-out;
+        
+        &:focus {
+            outline: none;
+            border-color: var(--tg-theme-primary);
+            box-shadow: 0 0 0 3px rgba(86, 12, 227, 0.1);
+        }
+        
+        &::placeholder {
+            color: var(--tg-grey-4);
+            font-size: 14px;
+        }
+        
+        @media (max-width: 575px) {
+            min-height: 44px;
+            padding: 12px 16px;
+            font-size: 14px;
+        }
+    }
+}
+
+.tg-form-actions {
+    width: 100%;
+    
+    .btn-link {
+        background: none;
+        border: none;
+        color: var(--tg-common-black);
+        text-decoration: underline;
+        font-size: 15px;
+        text-transform: capitalize;
+        cursor: pointer;
+        padding: 0;
+        
+        &:hover {
+            color: var(--tg-theme-primary);
+        }
+        
+        @media (max-width: 575px) {
+            font-size: 14px;
+        }
+    }
+}
+
+/* Admin Auth Enhancements */
+.admin-auth {
+    .tg-login-wrapper {
+        max-width: 100%;
+        
+        .tg-login-top {
+            h2 {
+                color: var(--tg-common-black);
+                font-size: 32px;
+                font-weight: 700;
+                margin-bottom: 8px;
+                
+                @media (max-width: 767px) {
+                    font-size: 28px;
+                }
+                
+                @media (max-width: 575px) {
+                    font-size: 24px;
+                }
+            }
+            
+            p {
+                color: var(--tg-grey-4);
+                font-size: 16px;
+                margin-bottom: 0;
+                
+                @media (max-width: 575px) {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+/* Enhanced Checkbox */
+.tg-checkbox {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+}
+
+.tg-label {
+    font-size: 14px;
+    color: var(--tg-common-black);
+    margin: 0;
+    cursor: pointer;
+    
+    @media (max-width: 575px) {
+        font-size: 13px;
+    }
+}
+
+/* Button Enhancements */
+.tg-btn {
+    min-height: 50px;
+    padding: 14px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease-out;
+    
+    &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+    
+    @media (max-width: 575px) {
+        min-height: 44px;
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+}
+
+/* Responsive Form Adjustments */
+@media (max-width: 575px) {
+    .tg-form-actions {
+        .d-flex {
+            flex-direction: column;
+            gap: 12px;
+            align-items: flex-start !important;
+        }
+        
+        .review-checkbox {
+            margin-bottom: 12px;
+        }
+        
+        .tg-login-navigate {
+            text-align: left;
+        }
+    }
+}
+
+/* Dark Mode Support */
+[data-theme="dark"] {
+    .tg-form-field .input {
+        background: var(--tg-grey-2);
+        border-color: var(--tg-border-2);
+        color: var(--tg-common-white);
+        
+        &:focus {
+            border-color: var(--tg-theme-primary);
+            box-shadow: 0 0 0 3px rgba(86, 12, 227, 0.2);
+        }
+        
+        &::placeholder {
+            color: var(--tg-grey-4);
+        }
+    }
+    
+    .tg-label {
+        color: var(--tg-common-white);
+    }
+    
+    .btn-link {
+        color: var(--tg-common-white);
+        
+        &:hover {
+            color: var(--tg-theme-primary);
+        }
+    }
+    
+    .admin-auth .tg-login-wrapper .tg-login-top {
+        h2 {
+            color: var(--tg-common-white);
+        }
+        
+        p {
+            color: var(--tg-grey-4);
+        }
+    }
+}
