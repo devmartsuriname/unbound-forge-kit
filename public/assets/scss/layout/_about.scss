@@ -6,25 +6,22 @@
 .tg-about{
     &-thumb{
         &-wrap{
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            justify-content: center;
             & img{
-                width: 100%;
-                height: auto;
-                object-fit: cover;
                 @media #{$md,$sm,$xs} {
                    margin-bottom: 30px;
+                   width: 100%;
                 }
             }
         }
         &-2{
+            float: right;
+            margin-right: -15px;
             @media #{$lg,$md,$sm,$xs} {
                 margin: 0;
             }
         }
         &-4{
+            margin-left: -15px;
             @media #{$lg,$md,$sm,$xs} {
                 margin: 0;
             }

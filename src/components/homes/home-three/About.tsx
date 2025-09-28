@@ -8,7 +8,8 @@ const About = () => {
             <div className="row">
                <div className="col-lg-3">
                   <div className="tg-about-thumb-wrap mb-30">
-                     <img className="w-100 tg-round-15 wow fadeInLeft" data-wow-delay=".3s" data-wow-duration=".7s" src="/assets/img/about/jungle-resort-main.jpg" alt="Jungle Resort PingPe rainforest view" />
+                     <img className="w-100 tg-round-15 mb-85 wow fadeInLeft" data-wow-delay=".3s" data-wow-duration=".7s" src="/assets/img/about/jungle-resort-1.jpg" alt="Jungle Resort PingPe rainforest view" />
+                     <img className="tg-about-thumb-2 tg-round-15 wow fadeInLeft" data-wow-delay=".4s" data-wow-duration=".9s" src="/assets/img/about/jungle-guide-2.jpg" alt="Local guide with traditional canoe" />
                   </div>
                </div>
                <div className="col-lg-6 mb-30">
@@ -31,8 +32,9 @@ const About = () => {
                   </div>
                </div>
                <div className="col-lg-3">
-                  <div className="tg-about-thumb-wrap mb-30">
-                     <img className="w-100 tg-round-15 wow fadeInRight" data-wow-delay=".3s" data-wow-duration=".7s" src="/assets/img/about/wildlife-encounter.jpg" alt="Upper Suriname wildlife encounter" />
+                  <div className="tg-about-thumb-wrap  mb-30">
+                     <img className="w-100 tg-round-15 mb-85 wow fadeInRight" data-wow-delay=".3s" data-wow-duration=".7s" src="/assets/img/about/village-visit-3.jpg" alt="Traditional village cultural experience" />
+                     <img className="tg-about-thumb-4 tg-round-15 wow fadeInRight" data-wow-delay=".4s" data-wow-duration=".9s" src="/assets/img/about/wildlife-4.jpg" alt="Upper Suriname wildlife encounter" />
                   </div>
                </div>
             </div>

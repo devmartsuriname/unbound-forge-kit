@@ -34,28 +34,22 @@
         }
     }
     &-right{
+        margin-right: 50px;
+        margin-left: 33px;
         @media #{$lg,$md,$sm,$xs} {
             margin-right: 0;
             margin-left: 0;
         }
     }
     &-thumb{
+        margin-right: -143px;
         position: relative;
         z-index: 1;
+        @media #{$md,$sm,$xs} {
+            margin-right: 0;
+        }
         @media #{$sm,$xs} {
             margin-bottom: 20px;
-        }
-        &-inner{
-            position: relative;
-            height: 100%;
-        }
-        &-2{
-            height: 100%;
-            & img{
-                height: 100%;
-                min-height: 400px;
-                object-fit: cover;
-            }
         }
     }
     &-big{
