@@ -16,6 +16,7 @@ export function useTheme() {
     const applyTheme = (newTheme: 'light' | 'dark') => {
       root.classList.remove('light', 'dark');
       root.classList.add(newTheme);
+      root.setAttribute('data-theme', newTheme);
       setResolvedTheme(newTheme);
     };
 
