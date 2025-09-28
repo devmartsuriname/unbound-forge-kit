@@ -27,23 +27,15 @@ const guest_data: DataType[] = [
 
 const BannerFormTwo = () => {
 
-   const [location, setLocation] = useState(false);
    const [checkInDate, setCheckInDate] = useState<Date | Date[]>(new Date());
    const [checkOutDate, setCheckOutDate] = useState<Date | Date[]>(new Date());
    const [guest, setGuest] = useState(false);
    const [guestCounts, setGuestCounts] = useState<DataType[]>(guest_data);
 
-   const locationRef = useRef<HTMLDivElement>(null);
    const guestRef = useRef<HTMLDivElement>(null);
 
    useEffect(() => {
       const handleClickOutside = (event: MouseEvent) => {
-         if (
-            locationRef.current &&
-            !locationRef.current.contains(event.target as Node)
-         ) {
-            setLocation(false);
-         }
          if (
             guestRef.current &&
             !guestRef.current.contains(event.target as Node)
@@ -79,43 +71,6 @@ const BannerFormTwo = () => {
    return (
       <form onSubmit={(e) => e.preventDefault()}>
          <div className="tg-booking-form-input-group d-flex align-items-end justify-content-between">
-            <div className="tg-booking-form-parent-inner tg-hero-quantity p-relative mr-15 mb-10">
-            <span className="tg-booking-form-title mb-5">Check in:</span>
-               {/* <span className="tg-booking-form-title mb-5">Destinations:</span> */}
-               <div ref={locationRef} onClick={() => setLocation((prev) => !prev)} className={`tg-booking-add-input-field tg-booking-quantity-toggle ${location ? "active" : ""} `}>
-                  <span className="tg-booking-title-value">Where are you going . . .</span>
-                  <span className="location">
-                     <svg width="13" height="16" viewBox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12.3329 6.7071C12.3329 11.2324 6.55512 15.1111 6.55512 15.1111C6.55512 15.1111 0.777344 11.2324 0.777344 6.7071C0.777344 5.16402 1.38607 3.68414 2.46962 2.59302C3.55316 1.5019 5.02276 0.888916 6.55512 0.888916C8.08748 0.888916 9.55708 1.5019 10.6406 2.59302C11.7242 3.68414 12.3329 5.16402 12.3329 6.7071Z" stroke="currentColor" strokeWidth="1.15556" strokeLinecap="round" strokeLinejoin="round" />
-                        <path d="M6.55512 8.64649C7.61878 8.64649 8.48105 7.7782 8.48105 6.7071C8.48105 5.636 7.61878 4.7677 6.55512 4.7677C5.49146 4.7677 4.6292 5.636 4.6292 6.7071C4.6292 7.7782 5.49146 8.64649 6.55512 8.64649Z" stroke="currentColor" strokeWidth="1.15556" strokeLinecap="round" strokeLinejoin="round" />
-                     </svg>
-                  </span>
-               </div>
-               <div className={`tg-booking-form-location-list tg-booking-quantity-active ${location ? "tg-list-open" : ""}`}>
-                  <ul className="scrool-bar scrool-height pr-5">
-                     <li>
-                        <i className="fa-regular fa-location-dot"></i>
-                        <span>Chicago</span>
-                     </li>
-                     <li>
-                        <i className="fa-regular fa-location-dot"></i>
-                        <span>Los Angeles</span>
-                     </li>
-                     <li>
-                        <i className="fa-regular fa-location-dot"></i>
-                        <span>London</span>
-                     </li>
-                     <li>
-                        <i className="fa-regular fa-location-dot"></i>
-                        <span>Paris</span>
-                     </li>
-                     <li>
-                        <i className="fa-regular fa-location-dot"></i>
-                        <span>Dubai</span>
-                     </li>
-                  </ul>
-               </div>
-            </div>
             <div className="tg-booking-form-parent-inner mr-15 mb-15">
                <span className="tg-booking-form-title mb-5">Check in:</span>
                <div className="tg-booking-add-input-date p-relative">
